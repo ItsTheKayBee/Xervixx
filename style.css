@@ -135,3 +135,25 @@
 @media only screen and (max-width: 990px){
     .progress{ margin-bottom: 20px; }
 }
+
+.payment_roadmap{
+    height: 150px;
+    width: 600px;
+    border: 2px solid black;
+}
+.roadmap_pos{
+    list-style: none;
+    display: inline-block;
+    width: 80px;
+    position: relative;
+    top: 30px;
+    z-index: 2;
+}
+.line{
+    height: 5px;
+    width: 500px;
+    background-color: black;
+    position: relative;
+    left: 5px;
+}
+
