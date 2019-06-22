@@ -2,7 +2,17 @@ filterSelection('all');
 function filterSelection(c) {
     var x, i;
     x = document.getElementsByClassName("column");
-    if (c === "all") c = "";
+    if (c === "all"){
+        c = "";
+        if(document.getElementById('feed-container').style.display==="none"){
+            document.getElementById('feed-container').style.display="block";
+            document.getElementsByClassName('flip')[0].setAttribute('class','fa fa-caret-down flip down');
+        }
+        else{
+            document.getElementById('feed-container').style.display="none";
+            document.getElementsByClassName('flip')[0].setAttribute('class','fa fa-caret-down flip');
+        }
+    }
     for (i = 0; i < x.length; i++) {
         removeClass(x[i], "show");
         if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");

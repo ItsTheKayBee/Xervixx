@@ -67,6 +67,10 @@ h1 {
     background-color: #666666;
     transition: 0.5s;
 }
+#feed-container{
+    display: none;
+    background-color: #818181;
+}
 .btn {
     border: none;
     width: 100%;
@@ -79,6 +83,10 @@ h1 {
     color: #818181;
     display: block;
 }
+.feed-sub{
+    background-color: #818181;
+    color:white;
+}
 .btn:hover {
     background-color: #ddd;
 }
@@ -86,6 +94,17 @@ h1 {
     background-color: #666;
     color: white;
 }
-@media only screen and (max-width: 990px){
+.flip{
+    -webkit-transition: linear 0.5s;
+    -moz-transition: linear 0.5s;
+    -o-transition: linear 0.5s;
+    transition: linear 0.5s;
 
+}
+.down{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }

@@ -17,13 +17,26 @@
     left: 0;
 }
 .pbar{
-    background-color: #049dff;border-top-left-radius: 10px;border-bottom-left-radius: 10px;
+    background-color: #049dff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    animation: loading 1s linear forwards;
+}
+@keyframes loading {
+    0%{
+        width:0;
+    }
+    100%{
+        width:50%;
+    }
 }
 .ptrack{
     width:100%;
     height: 20px;
     background-color: #818181;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 .progress > span{
     width: 50%;
@@ -139,11 +152,6 @@
         -webkit-transform: rotate(144deg);
         transform: rotate(180deg);
     }
-}
-@media only screen and (max-width: 990px){
-    .progress{
-
-     }
 }
 .payment_roadmap{
     height: 150px;
