@@ -5,14 +5,47 @@
     <title>Feed</title>
 </head>
 <link rel="stylesheet" href="feed-style.css">
+<link rel="stylesheet" href="style.css">
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <nav id="tabLayout">
-    <a class="btn">Payment</a>
-    <a class="btn active" onclick="filterSelection('all')">Home </a>
+    <a class="btn" href="">Home</a>
+    <a class="btn active" onclick="filterSelection('all')">Feed </a>
     <a class="btn" onclick="filterSelection('protecting')"> Protecting</a>
     <a class="btn" onclick="filterSelection('investing')"> Investing</a>
     <a class="btn" onclick="filterSelection('financing')"> Financing</a>
     <a class="btn" onclick="filterSelection('advising')"> Advising</a>
+    <a class="btn" href="">Stock Cricket</a>
+</nav>
+<nav id="closeScoreLayout">
+    <span class="fa fa-ellipsis-h" onclick="scoreLayout(this)" style="font-size:40px;color:white;padding:10px;"></span>
+    <div id="container-div" style="z-index:4;width:100%;display: none;box-shadow: none;">
+        <div class="container">
+            <div class="row" style="margin-left:30px">
+                <div class="col-md-3 col-sm-6">
+                    <div class="progress blue">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Level</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="daily-task">
+            <dl class="daily-task-list">
+                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily jeuebrebvrbvr ubvurvburvunv ivirtask 1 kuhra</dt><dd>0/1</dd></div>
+                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 2</dt><dd>0/1</dd></div>
+                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 3</dt><dd>0/1</dd></div>
+            </dl>
+            <center><button class="btns">View More&nbsp;<i class="fa fa-caret-right" style="color:deepskyblue;"></i></button></center>
+        </div>
+    </div>
 </nav>
 <div class="row">
     <div class="column protecting">

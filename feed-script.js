@@ -38,3 +38,13 @@ for (var i = 0; i < btns.length; i++) {
         this.className += " active";
     });
 }
+function scoreLayout(x){
+    if(x.parentElement.id==="closeScoreLayout"){
+        x.parentElement.setAttribute("id","openScoreLayout");
+        var cont=document.getElementById("container-div");
+        cont.style.display="block";
+    }else{
+        x.parentElement.setAttribute("id","closeScoreLayout");
+        document.getElementById("container-div").style.display="none";
+    }
+}

@@ -10,10 +10,10 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="script.js"></script>
 <link href="style.css" rel="stylesheet">
-    <div class="container-div">
+    <div id="container-div">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" style="width: 300px;">
                     <div class="progress blue">
                         <span class="progress-left">
                             <span class="progress-bar"></span>
@@ -21,16 +21,30 @@
                         <span class="progress-right">
                             <span class="progress-bar"></span>
                         </span>
-                        <div class="progress-value">Level</div>
+                        <div class="progress-value">Level 1</div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="daily-task">
             <dl class="daily-task-list">
-                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily jeuebrebvrbvr ubvurvburvunv ivirtask 1 kuhra</dt><dd>0/1</dd></div>
-                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 2</dt><dd>0/1</dd></div>
-                <div class="daily-task-div"><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 3</dt><dd>0/1</dd></div>
+                <div class="daily-task-div">
+                    <div class="ptrack">
+                        <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:50%;">
+                            1/2
+                        </div>
+                    </div>
+                    <dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily jeuebrebvrbvr ubvurvburvunv ivirtask 1 kuhra</dt></div>
+                <div class="daily-task-div"><div class="ptrack">
+                    <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
+                        7/10
+                    </div>
+                </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 2</dt></div>
+                <div class="daily-task-div"><div class="ptrack">
+                    <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
+                        7/10
+                    </div>
+                </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 3</dt></div>
             </dl>
             <center><button class="btns">View More&nbsp;<i class="fa fa-caret-right" style="color:deepskyblue;"></i></button></center>
         </div>
