@@ -15,17 +15,20 @@ h1 {
     word-break: break-all;
 }
 .row {
-    margin-left: 200px;
+    margin-left: 150px;
 }
 .row,
 .row > .column {
     padding: 8px;
 }
 .column {
-    width: 600px;
     display: none;
-    margin-left: auto;
+    flex-wrap: wrap;
+    max-width: 60%;
+    flex: 60%;
     margin-right: auto;
+    margin-left: auto;
+    padding:10px;
 }
 .row:after {
     content: "";
@@ -46,8 +49,12 @@ h1 {
     left: 0;
     height: 100%;
     z-index: 3;
+    font-size: 17px;
     overflow: hidden;
     background-color: #666666;
+}
+#tabLayout a{
+    font-size: 20px;
 }
 #openScoreLayout{
     width: 300px;
@@ -57,6 +64,8 @@ h1 {
     height: 100%;
     background-color: #666666;
     transition: 0.5s;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 #closeScoreLayout{
     width: 50px;
@@ -83,6 +92,12 @@ h1 {
     color: #818181;
     display: block;
 }
+#lower-menu-dropdown{
+    position: fixed;
+    top:60px;
+    right: 0;
+    display: none;
+}
 .feed-sub{
     background-color: #818181;
     color:white;
@@ -100,6 +115,21 @@ h1 {
     -o-transition: linear 0.5s;
     transition: linear 0.5s;
 }
+#tabLayout-icons{
+    position: fixed;
+    display: none;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 6;
+}
+#tabLayout-icons a{
+    float: left;
+    padding: 16px 6px;
+    width: 20%;
+    font-size: 24px;
+    text-align: center;
+}
 .down{
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -111,5 +141,127 @@ h1 {
     position: fixed;
     bottom: 0;
     width: 200px;
-    left: 0;
 }
+#feed-container-icon{
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    left:20%;
+}
+#contact{
+    display: none;
+}
+#openScoreLayout::-webkit-scrollbar-thumb{
+    background-color: #049dff;
+}
+#openScoreLayout::-webkit-scrollbar-track{
+    background-color: #dddddd;
+}
+#openScoreLayout::-webkit-scrollbar{
+    width:10px;
+}
+
+@media screen and (max-width:950px ) {
+    .column{
+        flex:80%;
+        max-width: 80%;
+    }
+}
+@media screen and (max-width:750px ) {
+    .column{
+        flex:80%;
+        max-width: 80%;
+    }
+    .row{
+        margin-left: 0;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    #closeScoreLayout{
+        width: 100%;
+        position: fixed;
+        top:0;
+        height: 60px;
+        background-color: #666666;
+        transition: none;
+    }
+    #tabLayout{
+        width:100%;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        box-shadow: #dddddd -1px -5px 5px;
+    }
+    #lower-menu{
+        display: none;
+    }
+    #tabLayout a{
+        float: left;
+        padding: 16px 6px;
+        width: 20%;
+        font-size: 14px;
+        text-align: center;
+    }
+    #contact{
+        float: right;
+        display: block;
+        position: fixed;
+        top:0;
+        right: 10px;
+    }
+    #small-progress-circle{
+        float: none;
+        position: fixed;
+        top:30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #display-btc{
+        position: fixed;
+        top:0;
+        left:15%;
+    }
+    #openScoreLayout{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 590px){
+    #tabLayout{
+        display: none;
+    }
+    #tabLayout-icons{
+        display: block;
+    }
+    .feed-feed:hover #feed-container{
+        display: block;
+    }
+    .column{
+        flex:100%;
+        max-width: 100%;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .row{
+        padding: 0;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 270px) {
+    #display-btc{
+        display: none;
+    }
+}
+@media screen and (max-height: 310px){
+    #lower-menu{
+        display: none;
+    }
+    #contact{
+        display: block;
+    }
+}
+
