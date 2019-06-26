@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-.coupon {
+.coupon{
     min-width: min-content;
     flex: 33%;
     max-width: 33.33%;
