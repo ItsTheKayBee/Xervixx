@@ -1,0 +1,139 @@
+.quiz_body{
+    font-size: 20px;
+    font-family: monospace;
+}
+
+#container{
+    margin : 20px auto;
+    background-color: #f47361;
+    height: 400px;
+    width : 800px;
+    box-shadow: 0px 2px 5px 0px;
+    position: relative;
+    top: 100px;
+}
+#start{
+    font-size: 35px;
+    font-weight: bolder;
+    width:500px;
+    height:100px;
+    border : 4px solid white;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    position: absolute;
+    left:150px;
+    top:140px;
+    color : white;
+}
+#start:hover{
+    border: 4px solid #5652ea;
+    color : #5652ea;
+    background-color: white;
+}
+#question{
+    width:500px;
+    height : 125px;
+    position: absolute;
+    left: 0;
+    right:0;
+    top:0;
+    color: white;
+    font-weight: bolder;
+    font-size: 28px;
+}
+#question p{
+    margin : 0;
+    padding : 15px;
+    font-size: 1.25em;
+}
+
+#choices{
+    width : 700px;
+    position: relative;
+    right : 0;
+    top : 100px;
+    padding : 10px
+    left:-30px;
+}
+.choice{
+    width : 500px;
+    text-align: center;
+    border : 2px solid white;
+    cursor: pointer;
+    padding : 5px;
+    color: white;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    margin-left: 85px;
+}
+.choice:hover{
+    border : 2px solid #5652ea;
+    color: #5652ea;
+    font-weight: bold;
+    background-color: white;
+}
+#timer{
+    position: absolute;
+    height : 100px;
+    width : 200px;
+    bottom : 0px;
+    text-align: center;
+}
+#counter{
+    font-size: 2em;
+    color: white;
+    font-weight: bolder;
+}
+#btimeGauge{
+    width : 150px;
+    height : 10px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin-left : 25px;
+}
+#timeGauge{
+    height : 10px;
+    border-radius: 10px;
+    background-color: #5652ea;
+    margin-top : -10px;
+    margin-left : 25px;
+}
+#progress{
+    width : 500px;
+    position: absolute;
+    bottom : 0px;
+    right : 0px;
+    padding: 5px;
+    text-align: right;
+}
+.prog{
+    width : 30px;
+    height : 30px;
+    border: 3px solid #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left : 5px;
+    margin-right : 10px;
+}
+#scoreContainer{
+    margin : 20px auto;
+    background-color: white;
+    height: 400px;
+    width : 800px;
+    box-shadow: 0px 2px 5px 0px;
+    position: relative;
+    display: none;
+}
+#scoreContainer p{
+    position: absolute;
+    display: block;
+    width : 100%;
+    height: 150px;
+    top:140px;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    color: #5652ea;
+}
