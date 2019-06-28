@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Xervixx</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link href="feed-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 </head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="script.js"></script>
-<link href="style.css" rel="stylesheet">
-    <div id="container-div">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6" style="width: 300px;">
-                    <div class="progress blue">
-                        <span class="progress-left">
-                            <span class="progress-bar"></span>
-                        </span>
-                        <span class="progress-right">
-                            <span class="progress-bar"></span>
-                        </span>
-                        <div class="progress-value">Level 1</div>
+    <body style="overflow-x: hidden";>
+        <div id="main_div">
+            <div id="tabLayout">
+                <a class="btn" href="main.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+                <a class="btn active feed-feed" onclick="filterSelection('all')" href="feed.html"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;Feed &nbsp;<span class="fa fa-caret-down flip"></span></a>
+                <div id="feed-container">
+                    <a class="btn feed-sub" onclick="filterSelection('protecting')"> Protecting</a>
+                    <a class="btn feed-sub" onclick="filterSelection('investing')"> Investing</a>
+                    <a class="btn feed-sub" onclick="filterSelection('financing')"> Financing</a>
+                    <a class="btn feed-sub" onclick="filterSelection('advising')"> Advising</a>
+                </div>
+                <a class="btn" href=""><i class="fa fa-chart-line"></i>&nbsp;&nbsp;Stock Cricket</a>
+                <a class="btn" href="quiz.html"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;Quiz</a>
+                <a class="btn" href="buy.html"><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;Coupons</a>
+                <div id="lower-menu">
+                    <a class="btn" href=""><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share</a>
+                    <a class="btn" href=""><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+                </div>
+            </div>
+
+            <div id="container-div" style="float: right;position: relative;left: -30px;top: 60px; border: 2px solid darkgray;background-color: white;">
+                <div class="container" style="margin-left: -170px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6" style="width: 300px;">
+                            <div class="progress blue">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">Level 1</div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="daily-task">
+                    <dl class="daily-task-list">
+                        <div class="daily-task-div">
+                            <div class="ptrack">
+                                <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:50%;">
+                                    1/2
+                                </div>
+                            </div>
+                            <dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily jeuebrebvrbvr ubvurvburvunv ivirtask 1 kuhra</dt></div>
+                        <div class="daily-task-div"><div class="ptrack">
+                            <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
+                                7/10
+                            </div>
+                        </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 2</dt></div>
+                        <div class="daily-task-div"><div class="ptrack">
+                            <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
+                                7/10
+                            </div>
+                        </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 3</dt></div>
+                    </dl>
+                    <center><button class="btns">View More&nbsp;<i class="fa fa-caret-right" style="color:deepskyblue;"></i></button></center>
+                </div>
+            </div>
+
+            <div id="progressbar_container" style="left: 250px;">
+                <p id="tag_emi"><i>PAY EMI AND INCREASE YOUR CREDIT SCORE!!!</i></p>
+                <div class="emi_tracker">
+                    <p class="loan_type">BUSINESS LOAN</p>
+                    <p class="installment">4th Installment Next <span class="days_left">5 DAYS LEFT</span></p>
+                    <ul class="progressbar">
+                        <li class="active">Stage 1</li>
+                        <li class="active">Stage 2</li>
+                        <li class="default">Stage 3</li>
+                        <li class="upnext">Stage 4</li>
+                        <li>Stage 5</li>
+                    </ul><br><br><br><br><br><br>
+                    <input type="button" name="pay" value="PAY NOW" class="pay_btn">
+                </div>
+                <div class="emi_tracker">
+                    <p class="loan_type">HOME LOAN</p>
+                    <p class="installment">2nd Installment Next <span class="days_left">2 DAYS AFTER</span></p>
+                    <ul class="progressbar">
+                        <li class="active">Stage 1</li>
+                        <li class="upnext">Stage 2</li>
+                        <li>Stage 3</li>
+                        <li>Stage 4</li>
+                    </ul><br><br><br><br><br><br>
+                    <input type="button" name="pay" value="PAY NOW" class="pay_btn">
                 </div>
             </div>
         </div>
-        <div class="daily-task">
-            <dl class="daily-task-list">
-                <div class="daily-task-div">
-                    <div class="ptrack">
-                        <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:50%;">
-                            1/2
-                        </div>
-                    </div>
-                    <dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily jeuebrebvrbvr ubvurvburvunv ivirtask 1 kuhra</dt></div>
-                <div class="daily-task-div"><div class="ptrack">
-                    <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
-                        7/10
-                    </div>
-                </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 2</dt></div>
-                <div class="daily-task-div"><div class="ptrack">
-                    <div class="progress-bar pbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
-                        7/10
-                    </div>
-                </div><dt><i class="fa fa-trophy" style="color:gold">&nbsp;</i>Daily task 3</dt></div>
-            </dl>
-            <center><button class="btns">View More&nbsp;<i class="fa fa-caret-right" style="color:deepskyblue;"></i></button></center>
-        </div>
-    </div>
+    </body>
 </html>

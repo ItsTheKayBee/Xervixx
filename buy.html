@@ -8,70 +8,100 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feed-style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script rel="script" src="feed-script.js"></script>
 </head>
     <body>
-        <h1 align="center">My Coupons</h1>
-        <p align="center">Sorry, you don't have any coupons:(</p>
-        <h1 align="center">Purchase Coupons</h1>
-        <div class="row">
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>1% OFF YOUR NEXT PERSONAL LOAN</b></h2>
-                    <p>1% off in the interest rates of your next personal loan</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">KAY069</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>50,000<span class="fa fa-btc" style="color: gold"></span></button>
-                </div>
+        <div id="tabLayout">
+            <a class="btn" href="main.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+            <a class="btn active feed-feed" onclick="filterSelection('all')" href="feed.html"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;Feed &nbsp;<span class="fa fa-caret-down flip"></span></a>
+            <div id="feed-container">
+                <a class="btn feed-sub" onclick="filterSelection('protecting')"> Protecting</a>
+                <a class="btn feed-sub" onclick="filterSelection('investing')"> Investing</a>
+                <a class="btn feed-sub" onclick="filterSelection('financing')"> Financing</a>
+                <a class="btn feed-sub" onclick="filterSelection('advising')"> Advising</a>
             </div>
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>1% OFF YOUR NEXT PROPERTY LOAN</b></h2>
-                    <p>1% off in the interest rates of your next personal loan</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">BEE069</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>100,000<span class="fa fa-btc" style="color: gold"></span></button>
-                </div>
+            <a class="btn" href=""><i class="fa fa-chart-line"></i>&nbsp;&nbsp;Stock Cricket</a>
+            <a class="btn" href="quiz.html"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;Quiz</a>
+            <a class="btn" href="buy.html"><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;Coupons</a>
+            <div id="lower-menu">
+                <a class="btn" href=""><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share</a>
+                <a class="btn" href=""><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
             </div>
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>1% OFF YOUR NEXT BUSINESS LOAN</b></h2>
-                    <p>1% off in the interest rates of your next personal loan</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">KAYBEE</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>150,000<span class="fa fa-btc" style="color: gold"></span></button>
+        </div>
+
+        <div id="buy_container" style="margin-left: 20px;">
+            <h1 align="center">My Coupons</h1>
+            <p align="center">Sorry, you don't have any coupons:(</p>
+            <h1 align="center">Purchase Coupons</h1>
+            <div class="row" style="width:90%;">
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>1% OFF YOUR NEXT PERSONAL LOAN</b></h2>
+                        <p>1% off in the interest rates of your next personal loan</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">KAY069</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>50,000<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
                 </div>
-            </div>
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>10% OFF YOUR NEXT STOCK INVESTMENT</b></h2>
-                    <p>You buy stocks and 10% of money will be paid from your x-money wallet!</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">PZDHIA</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>1% OFF YOUR NEXT PROPERTY LOAN</b></h2>
+                        <p>1% off in the interest rates of your next personal loan</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">BEE069</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>100,000<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
                 </div>
-            </div>
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>10% OFF YOUR NEXT MUTUAL FUNDS INVESTMENT</b></h2>
-                    <p>You buy mutual funds and 10% of money will be paid from your x-money wallet!</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">PKANNA</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>1% OFF YOUR NEXT BUSINESS LOAN</b></h2>
+                        <p>1% off in the interest rates of your next personal loan</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">KAYBEE</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>150,000<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
                 </div>
-            </div>
-            <div class="coupon">
-                <div class="container" style="background-color:gainsboro">
-                    <h2><b>10% OFF YOUR NEXT HEALTH INSURANCE</b></h2>
-                    <p>You buy any health insurance and 10% of money will be paid from your x-money wallet!</p></div>
-                <div class="container">
-                    <p>Use Promo Code: <span class="promo">PYADAK</span></p>
-                    <span class="expire">Expires: Jan 01, 2020</span>
-                    <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>10% OFF YOUR NEXT STOCK INVESTMENT</b></h2>
+                        <p>You buy stocks and 10% of money will be paid from your x-money wallet!</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">PZDHIA</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
+                </div>
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>10% OFF YOUR NEXT MUTUAL FUNDS INVESTMENT</b></h2>
+                        <p>You buy mutual funds and 10% of money will be paid from your x-money wallet!</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">PKANNA</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
+                </div>
+                <div class="coupon">
+                    <div class="container" style="background-color:gainsboro">
+                        <h2><b>10% OFF YOUR NEXT HEALTH INSURANCE</b></h2>
+                        <p>You buy any health insurance and 10% of money will be paid from your x-money wallet!</p>
+                    </div>
+                    <div class="container">
+                        <p>Use Promo Code: <span class="promo">PYADAK</span></p>
+                        <span class="expire">Expires: Jan 01, 2020</span>
+                        <button class="btns buy-btn">Buy Now<br>10% OFF<span class="fa fa-btc" style="color: gold"></span></button>
+                    </div>
                 </div>
             </div>
         </div>

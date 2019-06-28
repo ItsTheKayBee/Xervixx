@@ -101,8 +101,7 @@
     width:300px;
     height:max-content;
     padding: 20px 20px 20px 0;
-    border-radius: 10px;
-    box-shadow: #44484b 2px 2px 20px;
+    margin-right: 20px;
 }
 .btns{
     color: #000;
@@ -184,28 +183,120 @@ body::-webkit-scrollbar-track{
     background: #dddddd;
 }
 
-
-
-
-
-.payment_roadmap{
-    height: 150px;
-    width: 600px;
+.emi_tracker{
+    width:600px;
+    height: 215px;
     border: 2px solid black;
+    margin-bottom: 20px;
 }
-.roadmap_pos{
-    list-style: none;
-    display: inline-block;
-    width: 80px;
+.progressbar{
+    counter-reset: step;
+    margin-top: 20px;
+    margin-left: -50px;
+}
+.progressbar li{
+    list-style-type: none;
+    float: left;
+    width: 20%;
     position: relative;
-    top: 30px;
-    z-index: 2;
+    text-align: center;
+    margin-bottom: 30px;
 }
-.line{
+.progressbar li:before{
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+    border: 2px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar li:first-child:after{
+    content: none;
+}
+.progressbar li.active{
+    color: green;
+}
+.progressbar li.active:before{
+    border-color: green;
+    content: "\2714";
+}
+.progressbar li.active+li:after{
+    background-color: green;
+}
+.progressbar li.default{
+    color: red;
+}
+.progressbar li.default:before{
+    border-color: red;
+    content: "\2714";
+}
+.progressbar li.default+li:after{
+    background-color: red;
+}
+.progressbar li.upnext{
+    color: blue;
+}
+.progressbar li.upnext:before{
+    border-color: blue;
+}
+.installment{
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: 18px;
+    width: 100%;
+}
+.loan_type{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 2px;
+}
+.days_left{
+    margin-left: 250px;
+    padding: 3px;
     height: 5px;
-    width: 500px;
-    background-color: black;
-    position: relative;
-    left: 5px;
+    border:2px solid green;
+    color: green;
 }
-
+.pay_btn{
+    float: right;
+    margin-right: 40px;
+    margin-top: -25px;
+    background: none;
+    border: 2px solid #3498db;
+    color: #3458df;
+    padding: 4px;
+    font-size: 16px;
+    cursor:pointer;
+}
+.pay_btn:hover{
+    background-color: #3498db;
+    color: white;
+}
+#progressbar_container{
+    position: relative;
+    top: 60px;
+    left: 310px;
+}
+#tag_emi{
+    font-size: 28px;
+    font-weight: bolder;
+    margin-top: -30px;
+    color: blueviolet;
+    margin-left: -25px;
+}
