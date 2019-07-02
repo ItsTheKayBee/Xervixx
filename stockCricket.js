@@ -1,33 +1,58 @@
+var tourSelected=0;
 $(document).ready(function () {
     $("li.active").prevAll().addClass('checkedli');
     $("li.active").prevAll().removeClass('uncheckedli');
-    if(sessionStorage.getItem('tourChosen')==='t20'||sessionStorage.getItem('tourChosen')==='odi'||sessionStorage.getItem('tourChosen')==='test'){
-        matchSelect(sessionStorage.getItem('tourChosen'));
-    }
-    else{
-        $('#t20').show();
-    }
+    matchDisplay(document.getElementById('t20-b'));
+    $('#odi').hide();
+    $('#test').hide();
+    $('#t20').show();
 });
 function matchDisplay(x) {
     $('button.active').removeClass('active');
     $(x).addClass('active');
-    if($('button.active').attr('id')==='t20-b'){
-        $('.tourney').hide();
+    var matchFormat=x.id.substr(0,3);
+    if(matchFormat==='t20') {
+        $('#odi').hide();
+        $('#test').hide();
         $('#t20').show();
-    }else if($('button.active').attr('id')==='odi-b'){
-        $('.tourney').hide();
+        uponcom('t20','up');
+        uponcom('t20','on');
+        uponcom('t20','com');
+    }
+    else if(matchFormat==='odi'){
+        $('#t20').hide();
+        $('#test').hide();
         $('#odi').show();
-    }else{
-        $('.tourney').hide();
+        uponcom('odi','up');
+        uponcom('odi','on');
+        uponcom('odi','com');
+    }
+    else if(matchFormat==='tes'){
+        $('#odi').hide();
+        $('#t20').hide();
         $('#test').show();
+        matchFormat='test';
+        uponcom('test','up');
+        uponcom('test','on');
+        uponcom('test','com');
     }
 }
+function uponcom(matchFormat,session){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById(matchFormat+"-"+session).innerHTML= this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "stock_match.php?q=" + matchFormat+","+session, true);
+    xmlhttp.send();
+}
 function matchSelect(match) {
-    var tourChosen;
-    sessionStorage.setItem(tourChosen,match);
+    tourSelected=match;
     $('.tourney').hide();
     $('.tourney-menu').hide();
     $('.stock-select').show();
+    sort('Name');
     progressIncrement();
     $(document.body).css('overflow','hidden');
 }
@@ -69,7 +94,9 @@ function teamSelected(){
     var i;
     var players=$('#stock-chosen').children();
     for(i=1;i<6;i++) {
-        var player=$(players[i]).find('.stock-container span:eq(0)').text();
+        var player=$(players[i]).find('.stock-container span:eq(1)').text();
+        player=player.replace('(','');
+        player=player.replace(')','');
         if(player!==null){
             teamChosenFinal.push(player);
         }
@@ -99,7 +126,6 @@ function payPool(teamChosenFinal) {
         teamPlayers();
     }
 }
-$('.active')
 function teamPlayers() {
     var teamChosen=[];
     teamChosen=sessionStorage.getItem('teamChosen').split(',');
@@ -117,16 +143,105 @@ function capSelected(x) {
         $('#captain').attr('id',"");
         $(x).attr('id','captain');
         var cap=$(x).text();
+        var team=[];
+        team=sessionStorage.getItem('teamChosen').split(',');
+        var index = team.indexOf(cap);
+        if (index > -1) {
+            team.splice(index, 1);
+        }
+        team.unshift(cap);
+        team=team.toString();
+        sessionStorage.setItem('teamChosen',team);
         $('.act-ive').on('click',function (cap) {
             if(cap!==null){
+                reg_comp();
                 $('#pay-game').hide();
-                progressIncrement();
-                $('#succ-reg').show();
-                $('h3').show();
-                $('h5').show();
-                $('.in-active').addClass('act-ive');
-                $('.act-ive').removeClass('in-active');
             }
         });
+    }
+}
+function reg_comp() {
+    var team=sessionStorage.getItem('teamChosen');
+    var match_id=tourSelected;
+    var XMLHttp = new XMLHttpRequest();
+    XMLHttp.onreadystatechange=function(){
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById('succ-reg').innerHTML=this.responseText;
+            progressIncrement();
+            $('#succ-reg').show();
+            $('h3').show();
+            $('h5').show();
+            $('.in-active').addClass('act-ive');
+            $('.act-ive').removeClass('in-active');
+        }
+    };
+    XMLHttp.open("POST", "stock_reg.php?q=" + match_id+'*'+team, true);
+    XMLHttp.send();
+}
+function search(){
+    var players=document.getElementsByClassName('players');
+    var input = document.getElementById('company-name');
+    var input1 = document.getElementById('company-name-1');
+    var filter;
+    if(input===document.activeElement){
+        filter = input.value.toUpperCase();
+    }
+    else{
+        filter = input1.value.toUpperCase();
+    }
+    for (i = 0; i < players.length; i++) {
+        var stockContainer = players[i].getElementsByTagName('div');
+        var stockName= stockContainer[0].getElementsByTagName('span')[0];
+        var symbolName= stockContainer[0].getElementsByTagName('span')[1];
+        var symbol=symbolName.innerText.replace('(','');
+        symbol=symbol.replace(')','');
+        var txtValue = stockName.textContent || stockName.innerText;
+        txtValue+=symbol;
+        if (txtValue.toUpperCase().indexOf(filter)>-1) {
+            players[i].style.display = "";
+        } else {
+            if(players[i].parentElement.className==="all-players") {
+                players[i].style.display = "none";
+            }
+        }
+    }
+}
+function randomSelection(x) {
+    for(i=$('#stock-chosen').children().length;i<($('#stock-chosen').children().length+5);i++) {
+        if(x.value==='Automatic'){
+            var randNum=Math.round(Math.random()*100);
+            var e=document.getElementsByClassName('players');
+            dragElement(e[randNum]);
+        }
+    }
+}
+function sort(x) {
+    var sortOrder=x.value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("all-players").innerHTML = this.responseText;
+            caretUpDown();
+        }
+    };
+    xmlhttp.open("GET", "stock_cricket_php.php?q=" + sortOrder, true);
+    xmlhttp.send();
+}
+function caretUpDown() {
+    var stockChange=document.getElementsByClassName('stock-change');
+    for(i=0;i<stockChange.length;i++){
+        var value=document.getElementsByClassName('stock-change')[i].textContent;
+        value=value.replace('%','');
+        if(parseFloat(value)>0){
+            stockChange[i].children[0].setAttribute('class','fa fa-caret-up');
+            stockChange[i].setAttribute('style','color:#55b776');
+        }
+        else if(parseFloat(value)<0){
+            stockChange[i].children[0].setAttribute('class','fa fa-caret-down');
+            stockChange[i].setAttribute('style','color:#c00');
+        }
+        else{
+            stockChange[i].children[0].setAttribute('style','color:#dddddd');
+        }
     }
 }
