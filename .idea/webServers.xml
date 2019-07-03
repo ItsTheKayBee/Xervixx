@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="8cb49220-c818-46e9-9cdf-e75e3629f49d" name="Apache" url="http://localhost:80/Xervixx_git">
+      <webServer id="fef24471-a157-4c07-84c7-aef649f78bc9" name="Apache" url="http://localhost/Xervixx">
         <fileTransfer port="0" accessType="LOCAL" />
       </webServer>
     </option>
