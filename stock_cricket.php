@@ -98,11 +98,15 @@
         </div>
     </div>
     <div id="succ-reg" class="match">
-        <!--<span class="time-left" style="top:20px;left:30px">1hr 30m left</span>
-        <h3 align="center" style="padding-top: 20px;">You have successfully registered for this game!!!</h3>
-        <h5 align="center">Please wait till the results are declared!</h5>
-        <img src="flower.jpeg">
-        <button class="in-active" style="position:fixed;height:50px;bottom: 40px;right: 30px;" onclick="location.replace('feed.php')">Back to Feed</button>-->
+    </div>
+    <div class="leaderboard">
+        <h1>&nbsp;&nbsp;
+            <i class="fa fa-trophy" style="color: gold;font-size: 32px;"></i>
+            &nbsp;Top Performers
+            <i class="fa fa-times-circle" onclick="closeLB()" style="float: right;padding-right: 15px"></i>
+        </h1>
+        <table id="leaderboard">
+        </table>
     </div>
 </body>
 <script src="stockCricket.js"></script>

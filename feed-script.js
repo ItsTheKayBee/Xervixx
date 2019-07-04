@@ -51,6 +51,7 @@ for (var i = 0; i < btns.length; i++) {
 function scoreLayout(x){
     if(x.parentElement.id==="closeScoreLayout"){
         x.parentElement.setAttribute("id","openScoreLayout");
+        $('.fa-ellipsis-h').attr('class','fa fa-times-circle');
         var cont=document.getElementById("container-div");
         cont.style.display="block";
         var xmoney=document.getElementById("x-money-div");
@@ -66,6 +67,7 @@ function scoreLayout(x){
         }
     }else{
         x.parentElement.setAttribute("id","closeScoreLayout");
+        $('.fa-times-circle').attr('class','fa fa-ellipsis-h');
         document.getElementById("container-div").style.display="none";
         document.getElementById("x-money-div").style.display="none";
         document.getElementById('small-progress-circle').style.display="block";
@@ -85,7 +87,6 @@ $(window).on('resize', function(){
 });
 $(window).on('resize load', function() {
     if (window.innerWidth < 750) {
-        console.log("ku");
         $(".feed-feed").on("click", function () {
             $("#feed-container-icon").show();
         });
