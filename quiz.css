@@ -1,21 +1,25 @@
 .quiz_body{
     font-size: 20px;
     font-family: monospace;
+    margin: 0;
+    cursor: pointer;
 }
-
+::selection{
+    background: none;
+}
 #container{
-    margin : 20px auto;
+    margin : auto;
     background-color: #f47361;
-    height: 400px;
+    height: 500px;
     width : 800px;
-    box-shadow: 0px 2px 5px 0px;
+    box-shadow: 0 2px 5px 0;
     position: relative;
-    top: 100px;
+    top:60px;
 }
 #start{
     font-size: 35px;
     font-weight: bolder;
-    width:500px;
+    width:400px;
     height:100px;
     border : 4px solid white;
     text-align: center;
@@ -23,7 +27,7 @@
     cursor: pointer;
     position: absolute;
     left:150px;
-    top:140px;
+    top:180px;
     color : white;
 }
 #start:hover{
@@ -35,38 +39,34 @@
     width:500px;
     height : 125px;
     position: absolute;
-    left: 0;
-    right:0;
-    top:0;
     color: white;
     font-weight: bolder;
     font-size: 28px;
+    left:50%;
+    top:10px;
+    transform: translateX(-50%);
 }
 #question p{
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
 }
-
 #choices{
     width : 700px;
     position: relative;
     right : 0;
     top : 100px;
-    padding : 10px
+    padding : 10px;
     left:-30px;
 }
 .choice{
-    width : 500px;
+    width : 100%;
     text-align: center;
     border : 2px solid white;
     cursor: pointer;
     padding : 5px;
     color: white;
-    float: left;
-    margin-top: 5px;
-    margin-bottom: 25px;
-    margin-left: 85px;
+    margin: 5px auto 25px;
 }
 .choice:hover{
     border : 2px solid #5652ea;
@@ -78,7 +78,7 @@
     position: absolute;
     height : 100px;
     width : 200px;
-    bottom : 0px;
+    bottom : 0;
     text-align: center;
 }
 #counter{
@@ -103,8 +103,8 @@
 #progress{
     width : 500px;
     position: absolute;
-    bottom : 0px;
-    right : 0px;
+    bottom : 0;
+    right : 0;
     padding: 5px;
     text-align: right;
 }
@@ -120,9 +120,9 @@
 #scoreContainer{
     margin : 20px auto;
     background-color: white;
-    height: 400px;
+    height: 500px;
     width : 800px;
-    box-shadow: 0px 2px 5px 0px;
+    box-shadow: 0 2px 5px 0;
     position: relative;
     display: none;
 }

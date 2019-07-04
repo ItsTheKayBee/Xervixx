@@ -10,6 +10,17 @@
     $matches="SELECT TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME()) as end_time_diff FROM matches where match_id=".$reg_details[0];
     $user_lb_result=$con->query($user_lb_validation);
     $match_end_time=$con->query($matches);
+    $format_sql="SELECT format_id from matches where match_id=".$reg_details[0];
+    $formats=$con->query($format_sql);
+    $format_res=$formats->fetch_assoc();
+    $format_id=$format_res['format_id'];
+    if($format_id==1){
+        $pool=30;
+    }else if($format_id==2){
+        $pool=40;
+    }else{
+        $pool=50;
+    }
     if ($con->connect_error)
     {
         die('No connection: ' . $con->connect_error);
@@ -27,8 +38,8 @@
             $hours = intdiv($end_time, 1440).' days '.(intdiv($end_time, 60)%24).' hours '. ($end_time % 60)." minutes";
         else
             $hours = intdiv($end_time, 60).' hours '. ($end_time % 60)." minutes";
-        if($x_money>=50){
-            $x_money=$x_money-50;
+        if($x_money>=$pool){
+            $x_money=$x_money-$pool;
             $money_update="update user set x_money=".$x_money." where user_id=1";
             $add_reg="insert into leaderboard(user_id,match_id,team) values(1,".$reg_details[0].",\"".$reg_details[1]."\")";
             if ($con->query($add_reg) === TRUE) {

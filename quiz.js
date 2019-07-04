@@ -1,57 +1,28 @@
+var score = 0;
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
-const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
-
-let questions = [
-    {
-        question : "This is Question 1",
-        choiceA : "jxhddoedjsknxkmzlxsoxsxdso",
-        choiceB : "shxsoxkslxmmmmmmmmmmxooooosxs",
-        choiceC : "hskwpsoskxodicjdclcdcdcmdcccc",
-        correct : "A"
-    },{
-        question : "This is Question 2",
-        choiceA : "lmnjjhdweudywekrorfrf",
-        choiceB : "npdhiferpfirfporekffek",
-        choiceC : "klbfpweodeweddjjfhfo",
-        correct : "B"
-    },{
-        question : "This is Question 3",
-        choiceA : "weehwedewjodpefureifref",
-        choiceB : "ljduheiedpdwjchdcedjcdregtg",
-        choiceC : "kzjiurfueiodheufheferfrvgrrti",
-        correct : "C"
-    }
-];
-
-const lastQuestion = questions.length - 1;
+const lastQuestion = 2;
 let runningQuestion = 0;
 let count = 0;
 const questionTime = 10;
 const gaugeWidth = 150;
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
-let score = 0;
-
 function renderQuestion(){
-    let q = questions[runningQuestion];
-
-    question.innerHTML = "<p>"+(runningQuestion+1)+") "+ q.question +"</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+        if(this.readyState===4 && this.status===200){
+            document.getElementById('quiz_container').innerHTML=this.responseText;
+        }
+    };
+    xmlhttp.open('GET','quiz_questions.php?q='+runningQuestion,true);
+    xmlhttp.send();
 }
-
 start.addEventListener("click",startQuiz);
-
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
@@ -60,13 +31,11 @@ function startQuiz(){
     renderCounter();
     TIMER = setInterval(renderCounter,1000);
 }
-
 function renderProgress(){
     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
     }
 }
-
 function renderCounter(){
     if(count <= questionTime){
         counter.innerHTML = count;
@@ -84,9 +53,22 @@ function renderCounter(){
         }
     }
 }
-
-function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
+function checkAnswer(answer) {
+    var corr_answer;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            corr_answer = this.responseText;
+            ans_check(answer,corr_answer);
+        }
+    };
+    xmlhttp.open('GET', 'quiz_ans.php?q=' + runningQuestion, true);
+    xmlhttp.send();
+}
+var clicks=0;
+function ans_check(answer,corr_answer){
+    clicks++;
+    if( answer == corr_answer){
         score++;
         answerIsCorrect();
     }else{
@@ -101,17 +83,26 @@ function checkAnswer(answer){
         scoreRender();
     }
 }
-
 function answerIsCorrect(){
     document.getElementById(runningQuestion).style.backgroundColor = "#0ace41";
 }
-
 function answerIsWrong(){
     document.getElementById(runningQuestion).style.backgroundColor = "#ed2409";
 }
-
 function scoreRender(){
+    if(clicks===0){
+        score=0;
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            corr_answer = this.responseText;
+            ans_check(answer,corr_answer);
+        }
+    };
+    xmlhttp.open('GET', 'quiz_score.php?q=' + score, true);
+    xmlhttp.send();
     scoreDiv.style.display = "block";
-    const scoreMarks = score;
-    scoreDiv.innerHTML += "<p>YOU SCORED "+ scoreMarks +"/"+questions.length+"</p>";
+    $('#quiz_container').hide();
+    scoreDiv.innerHTML += "<p>YOU SCORED "+ score +"/3</p>";
 }

@@ -1,19 +1,11 @@
 <?php
-
-$host="localhost";
-$user="root";
-$password="";
-$db="xervixx";
-
-$con=mysqli_connect($host,$user,$password);
-if($con)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "xervixx";
+$con = new mysqli($servername,$username,$password,$dbname);
+if ($con->connect_error)
 {
-    echo "";
+    die('No connection: ' . $con->connect_error);
 }
-else
-{
-    die("Connection failed".mysqli_connect_error());
-}
-mysqli_select_db($con,$db);
-
 ?>
