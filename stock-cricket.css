@@ -12,8 +12,10 @@
     text-transform: uppercase;
     color: #7d7d7d;
 }
+.match-container{
+    width: 100%;
+}
 .tourney{
-    display: none;
     position: absolute;
     top:170px;
     width: 100%;
@@ -32,6 +34,9 @@
     position: relative;
     top:-180px;
     left:10px;
+}
+#t20{
+    display: none;
 }
 .btn{
     float: right;
@@ -54,7 +59,15 @@
     background-color: #cc0000;
     padding: 5px;
     color: white;
-    left:-50px;
+    left:-65px;
+}
+.results-time{
+    position: relative;
+    top: -40px;
+    background-color: #cc0000;
+    padding: 5px;
+    color: white;
+    left:-45px;
 }
 .t20-img{
     background-image: url(flower.jpeg);
@@ -172,7 +185,7 @@ body{
 hr{
     width: 99%;
 }
-.prev-match{
+.time_match{
     background-color: #cc0000;
     color:white;
     border-top-left-radius:5px;
@@ -198,7 +211,7 @@ hr{
     padding-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 50%;
+    height: 60%;
 }
 #stock-chosen{
     width: 50%;
@@ -211,15 +224,27 @@ hr{
 .stock-container{
     padding: 10px;
     background-color: #dddddd;
-    height: 50px;
+    height: 100px;
 }
 .stock-price{
-    float: right;
+    float: left;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+.stock-info{
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: #dddddd;
+}
+.symbol_name{
+    font-size: 15px;
 }
 .players{
-    flex: 33%;
+    flex: 31%;
     min-width: 31%;
-    max-width: 32%;
+    max-width: 31%;
     padding: 10px 0 0 10px;
     border-radius: 5px;
     float: left;
@@ -236,6 +261,11 @@ hr{
     left: 0;
     overflow: hidden;
     height: 100%;
+}
+.stock-change{
+    float: right;
+    padding-right: 5px;
+    padding-bottom: 2px;
 }
 .stock-input{
     width: 50%;
@@ -304,6 +334,9 @@ hr{
     flex-wrap: wrap;
     border-right: 10px;
 }
+#pay-game .stock-container{
+    height: 50px;
+}
 #succ-reg{
     width: 60%;
     height: 50%;
@@ -334,6 +367,11 @@ hr{
     #succ-reg{
         height: 50%;
         width: 60%;
+    }
+    .stock-change{
+        float: left;
+        padding-left: 10px;
+        padding-bottom: 2px;
     }
 }
 @media screen and (max-width: 490px){
@@ -372,10 +410,8 @@ hr{
         height: 60%;
         padding-right:10px;
     }
-    #pay-game .players{
-        max-width: 46%;
-        min-width: 46%;
-        flex:46%;
+    .stock-container{
+        height: 60px;
     }
 }
 @media screen and (max-width: 640px){
