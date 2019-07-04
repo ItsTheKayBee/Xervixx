@@ -1,0 +1,1 @@
+# lb_auto_updation.bat php C:\xampp\htdocs\Xervixx_git\leaderboard_updation.php

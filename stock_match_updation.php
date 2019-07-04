@@ -22,11 +22,11 @@
         else{
             $t20_matches=$matches."1 and (DATEDIFF(CURRENT_DATE(),`start_date`)>0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, `end_date`, CURRENT_TIME())>0))";
         }
-        $match_result=$con->query($t20_matches);
+        $match_result=$con->query($t20_matches."order by start_date desc");
     }
     else if($matchFormatSession[0]==='odi'){
         if($matchFormatSession[1]=='up'){
-            $odi_matches=$matches."2 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, CURRENT_TIME(), `end_date`)>0))";
+            $odi_matches=$matches."2 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, `start_date`,CURRENT_TIME())<0))";
         }
         else if($matchFormatSession[1]=='on'){
             $odi_matches=$matches."2 and (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0))";
@@ -34,11 +34,11 @@
         else{
             $odi_matches=$matches."2 and (DATEDIFF(CURRENT_DATE(),`start_date`)>0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, `end_date`, CURRENT_TIME())>0))";
         }
-        $match_result=$con->query($odi_matches);
+        $match_result=$con->query($odi_matches."order by start_date desc");
     }
     else{
         if($matchFormatSession[1]=='up'){
-            $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, CURRENT_TIME(), `end_date`)>0))";
+            $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE,`start_date`,CURRENT_TIME())<0))";
         }
         else if($matchFormatSession[1]=='on'){
             $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)>0 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0))";
@@ -46,7 +46,7 @@
         else{
             $test_matches=$matches."3 and ((DATEDIFF(CURRENT_DATE(),`start_date`)>0 and TIMESTAMPDIFF(MINUTE, `end_date`, CURRENT_TIME())>0))";
         }
-        $match_result=$con->query($test_matches);
+        $match_result=$con->query($test_matches."order by start_date desc");
     }
     if ($match_result->num_rows > 0) {
         while($row = $match_result->fetch_assoc()) {
@@ -93,7 +93,7 @@
                         echo '<div class="match">';
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="match-date">' . $match_date . '</span>';
-                        echo '<button class="btn">View Leaderboard</button></div>';
+                        echo '<button class="btn" onclick="showLB('.$matchFormat.')">View Leaderboard</button></div>';
                     }
                 } else {
                     if ($start_time_diff > 0 && $end_time_diff < 0) {
@@ -108,7 +108,7 @@
                         echo '<div class="match">';
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="match-date">' . $match_date . '</span>';
-                        echo '<button class="btn">View Leaderboard</button></div>';
+                        echo '<button class="btn" onclick="showLB('.$matchFormat.')">View Leaderboard</button></div>';
                     }
                 }
             }else{
@@ -145,7 +145,7 @@
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="match-date">' . $match_date . '</span>';
                         echo '<span class="time-left">PLAYED</span>';
-                        echo '<button class="btn">View Leaderboard</button></div>';
+                        echo '<button class="btn" onclick="showLB('.$matchFormat.')">View Leaderboard</button></div>';
                     }
                 } else {
                     if ($start_time_diff > 0 && $end_time_diff < 0) {
@@ -162,7 +162,7 @@
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="match-date">' . $match_date . '</span>';
                         echo '<span class="time-left">PLAYED</span>';
-                        echo '<button class="btn">View Leaderboard</button></div>';
+                        echo '<button class="btn" onclick="showLB('.$matchFormat.')">View Leaderboard</button></div>';
                     }
                 }
             }

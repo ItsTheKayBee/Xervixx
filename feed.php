@@ -111,7 +111,7 @@
     </div>
 </nav>
 <div class="row">
-    <?php include 'feed_php.php';?>
+    <?php include 'feed_updation.php';?>
 </div>
 </body>
 <script src="feed-script.js"></script>
