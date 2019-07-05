@@ -1,7 +1,11 @@
 <?php
+session_start();
+?>
+<?php
 include 'db_connect.php';
 $user_id=1;
-$score=$_REQUEST['q'];
+$score=$_SESSION['score'];
+echo $score;
 if($score==1){
     $money_won=10;
 }else if($score==2){
@@ -39,4 +43,7 @@ if($user_lb_result->num_rows==0){
 else{
     echo "you have played already. come back later";
 }
+session_unset();
+session_destroy();
+?>
 

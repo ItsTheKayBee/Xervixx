@@ -1,4 +1,3 @@
-var score = 0;
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const counter = document.getElementById("counter");
@@ -58,18 +57,15 @@ function checkAnswer(answer) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            corr_answer = this.responseText;
-            ans_check(answer,corr_answer);
+            ans_verify = this.responseText;
+            ans_check(ans_verify);
         }
     };
-    xmlhttp.open('GET', 'quiz_ans.php?q=' + runningQuestion, true);
+    xmlhttp.open('GET', 'quiz_ans.php?q=' + runningQuestion+','+answer, true);
     xmlhttp.send();
 }
-var clicks=0;
-function ans_check(answer,corr_answer){
-    clicks++;
-    if( answer == corr_answer){
-        score++;
+function ans_check(ans_verify){
+    if(ans_verify){
         answerIsCorrect();
     }else{
         answerIsWrong();
@@ -90,19 +86,15 @@ function answerIsWrong(){
     document.getElementById(runningQuestion).style.backgroundColor = "#ed2409";
 }
 function scoreRender(){
-    if(clicks===0){
-        score=0;
-    }
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            corr_answer = this.responseText;
-            ans_check(answer,corr_answer);
+            var score=this.responseText;
+            scoreDiv.innerHTML += "<p>YOU SCORED "+ score +"/3</p>";
         }
     };
-    xmlhttp.open('GET', 'quiz_score.php?q=' + score, true);
+    xmlhttp.open('GET', 'quiz_score.php?', true);
     xmlhttp.send();
     scoreDiv.style.display = "block";
     $('#quiz_container').hide();
-    scoreDiv.innerHTML += "<p>YOU SCORED "+ score +"/3</p>";
 }

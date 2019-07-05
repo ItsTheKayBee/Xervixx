@@ -17,7 +17,7 @@
             $i+=1;
         }
     }else{
-        echo "No quiz present";
+        echo "No quiz present at this moment. come back later.";
     }
     $quiz_attempt_validation="select attempted from quiz_lb where user_id=".$user_id." and quiz_id=".$quiz_id;
     $attempt_res=$con->query($quiz_attempt_validation);
@@ -29,6 +29,6 @@
                     <div class="choice" id="C" onclick="checkAnswer(3)">'.$all_questions[$q_no][3].'</div>
                     <div class="choice" id="D" onclick="checkAnswer(4)">'.$all_questions[$q_no][4].'</div></div>';
     }else{
-        echo "Come back later for a new quiz.";
+        echo "You have already given this quiz. Come back later for a new quiz.";
     }
 ?>
