@@ -4,6 +4,7 @@ p{
     font-size: 12px;
     font-family: sans-serif;
     margin-top: 90px;
+    cursor:default;
 }
 body{
     margin: 0;
@@ -33,6 +34,15 @@ div{
     margin-top: 15px;
     margin-bottom: 40px;
     padding:6px 0;
+    cursor: default;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+#pwdc-form{
+    display: none;
 }
 .styles{
     width: 100%;
