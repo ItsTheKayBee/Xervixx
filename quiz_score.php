@@ -43,7 +43,5 @@ if($user_lb_result->num_rows==0){
 else{
     echo "you have played already. come back later";
 }
-session_unset();
-session_destroy();
 ?>
 

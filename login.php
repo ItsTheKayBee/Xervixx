@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         $loan_taken=$row['loan_taken'];
         $_SESSION['user_id']=$user_id;
         $_SESSION['loan_taken']=$loan_taken;
-        header('Location: main.html');
+        header('Location: main.php');
     }
     else{
         echo "<script>alert('Incorrect Username or Password!');</script>";

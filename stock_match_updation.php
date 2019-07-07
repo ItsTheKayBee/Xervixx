@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $user_id=$_SESSION['user_id'];
     $matchFormat = $_REQUEST["q"];
     $matchFormatSession=explode(',',$matchFormat);
     $servername = "localhost";
@@ -11,7 +13,7 @@
         die('No connection: ' . $con->connect_error);
     }
     $matches="SELECT matches.match_id,matches.start_date,matches.end_date, DATEDIFF(CURRENT_DATE(), `start_date`) as date_diff, TIMESTAMPDIFF(MINUTE, `start_date`,CURRENT_TIME()) as start_time_diff,TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME()) as end_time_diff FROM matches where format_id=";
-    $user_lb_validation='select * from leaderboard where user_id=1 and match_id=';
+    $user_lb_validation='select * from leaderboard where user_id='.$user_id.' and match_id=';
     if($matchFormatSession[0]==='t20'){
         if($matchFormatSession[1]=='up'){
             $t20_matches=$matches."1 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE, `start_date`,CURRENT_TIME())<0))";
