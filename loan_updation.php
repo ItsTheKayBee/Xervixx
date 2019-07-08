@@ -1,6 +1,5 @@
 <?php
     include 'db_connect.php';
-    session_start();
     $user_id=$_SESSION['user_id'];
     $loan_taken=$_SESSION['loan_taken'];
     $user_query="select * from user where user_id=".$user_id;
@@ -22,15 +21,21 @@
                             $paid_date=$emis['paid_date'];
                             $instl_no=$emis['instl_no'];
                             $due_date=$emis['due_date'];
-                            $due_diff=str_replace('-','',$emis['due_date_diff']);
+                            $due_diff=$emis['due_date_diff'];
+                            if($due_diff>0){
+                                $due_diff_text=$due_diff.' days late. Pay ASAP';
+                            }else{
+                                $due_diff_text=str_replace('-','',$due_diff).' days are left to pay';
+                            }
                             if($paid_date=='0000-00-00'){
                                 $curr_instl_no=$instl_no;
+                                break;
                             }
                         }
                     }
                     $due_date_time=date_create($due_date);
                     $due_formatted=date_format($due_date_time,'d-m-Y');
-                    echo '<span class="due-date"> Due on:<br>'.$due_formatted.'</span><p class="installment">Next Installment no. '.$curr_instl_no.'<span class="days_left">'.$due_diff.' DAYS LEFT TO PAY</span></p><input type="button" name="pay" value="PAY NOW" class="pay_btn"></div><ul class="progressbar">';
+                    echo '<span class="due-date"> Due on:<br>'.$due_formatted.'</span><p class="installment">Next Installment no. '.$curr_instl_no.'<span class="days_left">'.$due_diff_text.'</span></p><input type="button" name="pay" value="PAY NOW" class="pay_btn"></div><ul class="progressbar">';
                     $emi_res=$con->query($emi_query);
                     if($emi_res->num_rows>0) {
                         while ($emis = $emi_res->fetch_assoc()) {
@@ -76,6 +81,7 @@
                                 $class='default';
                                 if(($paid_date=='0000-00-00' && $due_diff>0)){
                                     $class='defaulter';
+                                    $marker='fas fa-map-marker-alt';
                                 }
                                 $stars='stars';
                                 if($date_diff>=7){
@@ -108,9 +114,12 @@
                                     $stars_ratings2='fas fa-star';
                                     $stars_ratings3='fas fa-star';
                                 }
-                            }else if($paid_date=='0000-00-00' && $due_diff<=0){
+                            }else if($paid_date=='0000-00-00' && $due_diff<=0 && $due_diff>-30){
                                 $class='upnext';
                                 $marker='fas fa-map-marker-alt';
+                            }
+                            else{
+                                $class='up-next-next';
                             }
                             echo '<li class="'.$class.' tooltip">Level '.$instl_no.
                                 '<span class="'.$stars.'"><span class="'.$stars_ratings1.'"></span><span class="'.$stars_ratings2.'"></span><span class="'.$stars_ratings3.'"></span></span><span class="'.$marker.

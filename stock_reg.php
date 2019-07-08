@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $user_id=$_SESSION['user_id'];
     $reg_details = explode('*',$_REQUEST["q"]);
     $servername = "localhost";
     $username = "root";
@@ -40,27 +42,22 @@
             $hours = intdiv($end_time, 60).' hours '. ($end_time % 60)." minutes";
         if($x_money>=$pool){
             $x_money=$x_money-$pool;
-            $money_update="update user set x_money=".$x_money." where user_id=1";
+            $money_update="update user set x_money=".$x_money." where user_id=".$user_id;
             $add_reg="insert into leaderboard(user_id,match_id,team) values(1,".$reg_details[0].",\"".$reg_details[1]."\")";
             if ($con->query($add_reg) === TRUE) {
                 if ($con->query($money_update) === TRUE) {
-                    echo '<span class="time-left" style="top:20px;left:30px">'.$hours.' left</span>';
+/*                    echo '<span class="time-left" style="top:20px;left:30px">'.$hours.' left</span>';
                     echo '<h3 align="center" style="padding-top: 20px;">You have successfully registered for this game!!!</h3>';
                     echo '<h5 align="center">Please wait till the results are declared!</h5>';
                     echo '<img src="flower.jpeg">';
-                    echo '<button class="in-active" style="position:fixed;height:50px;bottom: 40px;right: 30px;" onclick="location.replace(\'feed.php\')">Back to Feed</button>';
-                } else {
-                    echo "Money Error:<br>" . $con->error;
+                    echo '<button class="in-active" style="position:fixed;height:50px;bottom: 40px;right: 30px;" onclick="location.replace(\'feed.php\')">Back to Feed</button>';*/
+                    echo "You have successfully registered for this game";
                 }
-            } else {
-                echo "User Error:<br>" . $con->error;
             }
         }
         else{
             echo "Insufficient balance to play";
         }
-    } else {
-        echo "You have already registered for this game!";
     }
     $con->close();
 ?>

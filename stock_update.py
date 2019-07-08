@@ -64,6 +64,7 @@ class Nse_api:
 		sql = "UPDATE stocks SET last_price = %s, price_change = %s where symbol=%s";
 		val = (lastPrice,priceChange,symbol)
 		mycursor.execute(sql,val)
+		print("1 stock updated")
 
 		mydb.commit()
  

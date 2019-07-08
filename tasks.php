@@ -1,7 +1,6 @@
 <?php
-$user_id=$_SESSION['user_id'];
 include 'db_connect.php';
-
+$user_id=$_SESSION['user_id'];
 $tasks_sql="select * from tasks inner join user_tasks on tasks.tasks_id=user_tasks.task_id where user_id=".$user_id;
 $tasks_res=$con->query($tasks_sql);
 if($tasks_res->num_rows>0){

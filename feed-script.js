@@ -56,10 +56,6 @@ function scoreLayout(x){
         cont.style.display="block";
         var xmoney=document.getElementById("x-money-div");
         xmoney.style.display="block";
-        var spc= document.getElementById("small-progress-circle");
-        spc.style.display="none";
-        var btc=document.getElementById('display-btc');
-        btc.style.display="none";
         if(window.innerWidth<750){
             document.getElementById("tabLayout").style.display="none";
             var contact=document.getElementById('contact');
@@ -70,15 +66,13 @@ function scoreLayout(x){
         $('.fa-times-circle').attr('class','fa fa-ellipsis-h');
         document.getElementById("container-div").style.display="none";
         document.getElementById("x-money-div").style.display="none";
-        document.getElementById('small-progress-circle').style.display="block";
-        document.getElementById('display-btc').style.display="block";
         document.getElementById('tabLayout').style.display="block";
         if(window.innerWidth<750)
             document.getElementById('contact').style.display="block";
     }
 }
 $(window).on('resize', function(){
-    if ($(window).width()>750 && $(window).height()>310){
+    if ($(window).width()>750){
         $("#contact").hide();
     }
     else{
@@ -91,20 +85,22 @@ $(window).on('resize load', function() {
             $("#feed-container-icon").show();
         });
         $(".feed-feed").hover(
-            function (e) {
-                $("#feed-container-icon").show();
-            },
-            function (e) {
-                $("#feed-container-icon").hover(
-                    function (e) {
+                function (e) {
+                    if(window.innerWidth<750) {
                         $("#feed-container-icon").show();
-                    },
-                    function (e) {
-                        $("#feed-container-icon").hide();
                     }
-                );
-                $("#feed-container-icon").hide();
-            }
+                },
+                function (e) {
+                    $("#feed-container-icon").hover(
+                        function (e) {
+                            $("#feed-container-icon").show();
+                        },
+                        function (e) {
+                            $("#feed-container-icon").hide();
+                        }
+                    );
+                    $("#feed-container-icon").hide();
+                }
         );
         $("#feed-container-icon").on("click", function () {
             $("#feed-container-icon").hide();

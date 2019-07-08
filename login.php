@@ -1,33 +1,3 @@
-<?php
-session_start();
-include 'db_connect.php';
-if(isset($_POST['submit'])){
-    $uname=$_POST['Username'];
-    $password=$_POST['Password'];
-    if($uname==NULL){
-        $phone=$_POST['phone'];
-        $otp=$_POST['otp'];
-    }
-    if($uname!=NULL){
-        $user_validation_query="SELECT * FROM user where username='".$uname."' AND password='".md5($password)."'";
-        $result=$con->query($user_validation_query);
-    }else if($otp=='123') {
-        $otp_validation_query = "SELECT * FROM user where contact='" . $phone . "'";
-        $result = $con->query($otp_validation_query);
-    }
-    if($result->num_rows==1){
-        $row=$result->fetch_assoc();
-        $user_id=$row['user_id'];
-        $loan_taken=$row['loan_taken'];
-        $_SESSION['user_id']=$user_id;
-        $_SESSION['loan_taken']=$loan_taken;
-        header('Location: main.php');
-    }
-    else{
-        echo "<script>alert('Incorrect Username or Password!');</script>";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,14 +11,14 @@ if(isset($_POST['submit'])){
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <body>
-<form class="login-form" name="myForm" id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form class="login-form" name="myForm" id="login-form" method="post" action="login_check.php">
     <h1>LOGIN</h1>
     <div>
         <div class="styles">
             <input type="text" name="Username" pattern="^[a-zA-Z0-9]+$" placeholder="Username" autocomplete="off" id="nid" required>
         </div>
         <div class="styles">
-            <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z0-9]).{3,}" placeholder="Password" id="pid" required>
+            <input type="password" name="Password" pattern="[A-Za-z0-9]{3,}" placeholder="Password" id="pid" required>
         </div><br>
         <input type="submit" name="submit" value="LOGIN">
         <a onclick="verification()" href="#">FORGOT PASSWORD?</a>
@@ -57,7 +27,7 @@ if(isset($_POST['submit'])){
 <form id="pwdc-form" class="login-form" name="myForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <div>
         <div class="styles">
-            <input type="tel" name="phone" pattern="^[0-9]+$" placeholder="Phone number" autocomplete="off" required>
+            <input type="tel" name="phone" pattern="^[0-9]{10}+$" placeholder="Phone number" autocomplete="off" required>
         </div>
         <div class="styles">
             <input type="password" name="otp" pattern="(?=.*\d)(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z0-9]).{3,}" placeholder="Enter OTP" required>
@@ -66,5 +36,69 @@ if(isset($_POST['submit'])){
     </div>
 </form>
 </body>
-<script src="login.js"></script>
+<footer>
+    <script src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</footer>
 </html>
+<?php
+    session_start();
+    include 'db_connect.php';
+    if(isset($_POST['submit'])) {
+        $phone = $_POST['phone'];
+        $otp = $_POST['otp'];
+        if ($otp == '123') {
+            $otp_validation_query = "SELECT * FROM user where contact='" . $phone . "'";
+            $result = $con->query($otp_validation_query);
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_assoc();
+                $user_id = $row['user_id'];
+                $loan_taken = $row['loan_taken'];
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['loan_taken'] = $loan_taken;
+                echo '<script>
+            swal({
+                title: "Logged in successfully!",
+                icon: "success",
+                button:"Ok"
+            })
+                .then((Ok) => {
+                    if (Ok) {
+                        location.replace("main.php");
+                    }
+                });
+            </script>';
+            } else {
+                echo '<script>
+            swal({
+                title: "Incorrect Phone number",
+                text: "Please re-enter",
+                icon: "warning",
+                button: "Try Again",
+            })
+                .then((Ok) => {
+                    if (Ok) {
+                        location.replace("login.php");
+                    }
+                });
+            </script>';
+            }
+        } else {
+            echo '<script>
+            swal({
+                title: "Incorrect OTP",
+                text: "Please re-enter OTP",
+                icon: "warning",
+                button: "Try Again",
+            })
+                .then((Ok) => {
+                    if (Ok) {
+                        location.replace("login.php");
+                    }
+                });
+        </script>';
+        }
+    }
+?>

@@ -43,7 +43,7 @@
             $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE,`start_date`,CURRENT_TIME())<0))";
         }
         else if($matchFormatSession[1]=='on'){
-            $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)>0 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0))";
+            $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0))";
         }
         else{
             $test_matches=$matches."3 and ((DATEDIFF(CURRENT_DATE(),`start_date`)>0 and TIMESTAMPDIFF(MINUTE, `end_date`, CURRENT_TIME())>0))";
@@ -124,7 +124,7 @@
                     echo '</div>';
                 } else if ($date_diff == 0) {
                     if ($start_time_diff < 0) {
-                        $match_date = date_format($match_date, 'H:ia');
+                        $match_date = date_format($match_date, 'H:iA');
                         $start_time_diff = str_replace('-', '', $start_time_diff);
                         $hours = intdiv($start_time_diff, 60) . ' hours ' . ($start_time_diff % 60) . " minutes";
                         echo '<div class="match">';
@@ -134,12 +134,17 @@
                         echo '</div>';
                     } else if ($start_time_diff > 0 && $end_time_diff < 0) {
                         $end_time_diff = str_replace('-', '', $end_time_diff);
-                        $end_time_diff = number_format($end_time_diff);
-                        $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        if(intdiv($end_time_diff, 1440)>=1){
+                            $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        }else if((intdiv($end_time_diff, 60) % 24)>=1){
+                            $hours = (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        }else{
+                            $hours = ($end_time_diff % 60) . " minutes";
+                        }
                         echo '<div class="match">';
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="live">LIVE</span>';
-                        echo '<span class="results-time">' . ($hours) . ' left</span>';
+                        echo '<span class="results-time">' . $hours . ' left</span>';
                         echo '<span class="btn">Playing</span></div>';
                     } else {
                         $match_date = date_format($match_date, 'd-m-Y');
@@ -152,7 +157,13 @@
                 } else {
                     if ($start_time_diff > 0 && $end_time_diff < 0) {
                         $end_time_diff = str_replace('-', '', $end_time_diff);
-                        $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        if(intdiv($end_time_diff, 1440)>=1){
+                            $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        }else if((intdiv($end_time_diff, 60) % 24)>=1){
+                            $hours = (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                        }else{
+                            $hours = ($end_time_diff % 60) . " minutes";
+                        }
                         echo '<div class="match">';
                         echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                         echo '<span class="live">LIVE</span>';

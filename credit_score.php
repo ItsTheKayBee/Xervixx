@@ -20,9 +20,9 @@ if($row=$credit_res->fetch_assoc()){
     }else if($credit_score>=500 && $credit_score<650){
         $color='orange';
     }else if($credit_score>=650 && $credit_score<750){
-        $color='green';
+        $color='lime';
     }else if($credit_score>=750 && $credit_score<=900){
-        $color='darkgreen';
+        $color='green';
     }
     echo '<div class="row" style="width: 300px;">
                   <div class="col-md-3 col-sm-6">

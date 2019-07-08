@@ -255,9 +255,6 @@ body::-webkit-scrollbar-track{
     border-color: red;
     content: "\2718";
 }
-.progressbar li.defaulter+li:after{
-    background-color: red;
-}
 .progressbar li.upnext{
     color: blue;
 }
@@ -417,3 +414,10 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
     -webkit-text-stroke-color: brown;
     -webkit-text-stroke-width: 1px;
 }
+#x_money_div{
+    float: right;
+    right:200px;
+    position: relative;
+    width: max-content;
+}
+

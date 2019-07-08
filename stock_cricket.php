@@ -110,4 +110,7 @@
     </div>
 </body>
 <script src="stockCricket.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>

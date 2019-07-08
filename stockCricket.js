@@ -39,15 +39,20 @@ function matchDisplay(x) {
     }
 }
 function uponcom(matchFormat,session){
-    format=matchFormat;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            document.getElementById(matchFormat+"-"+session).innerHTML= this.responseText;
-        }
+    var ajax_update = function() {
+        format=matchFormat;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById(matchFormat+"-"+session).innerHTML= this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "stock_match_updation.php?q=" + matchFormat+","+session, true);
+        xmlhttp.send();
     };
-    xmlhttp.open("GET", "stock_match_updation.php?q=" + matchFormat+","+session, true);
-    xmlhttp.send();
+    ajax_update();
+    var interval = 1000*60;
+    setInterval(ajax_update, interval);
 }
 function matchSelect(match) {
     tourSelected=match;
@@ -164,11 +169,59 @@ function capSelected(x) {
         }
         $('.act-ive').on('click',function (cap) {
             if(cap!==null){
-                var confirmReg=confirm("Do you wish to confirm your team and pay pool x-money?\nPool x-money: "+pool);
-                if(confirmReg===true){
-                    reg_comp();
-                    $('#pay-game').hide();
-                }
+                swal({
+                    title: "Do you wish to confirm your team and pay pool x-money?",
+                    text: pool+" x-money will be deducted from your x-wallet",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willPay) => {
+                        if (willPay) {
+                            var team=sessionStorage.getItem('teamChosen');
+                            var match_id=tourSelected;
+                            var XMLHttp = new XMLHttpRequest();
+                            XMLHttp.onreadystatechange=function(){
+                                if (this.readyState === 4 && this.status === 200) {
+                                    var resText=this.responseText;
+                                    progressIncrement();
+                                    $('#pay-game').hide();
+                                    if(resText==="You have successfully registered for this game"){
+                                        swal({
+                                            title: resText,
+                                            icon: "success",
+                                            button:'Ok',
+                                        })
+                                            .then((ok)=>{
+                                                if(ok){
+                                                    location.replace('stock_cricket.php');
+                                                }
+                                            });
+                                    }
+                                    else{
+                                        swal({
+                                            title: "Could not complete registration",
+                                            text:"You dont have sufficient x-money in your wallet",
+                                            icon: "error",
+                                            button:'Earn more',
+                                        })
+                                            .then((Earn)=>{
+                                                if(Earn){
+                                                    location.replace('main.php');
+                                                }
+                                            });
+                                    }
+                                }
+                            };
+                            XMLHttp.open("POST", "stock_reg.php?q=" + match_id+'*'+team, true);
+                            XMLHttp.send();
+                        } else {
+                            swal({
+                                title: "Could not complete registration",
+                                icon: "error",
+                            });
+                        }
+                    });
             }
         });
     }
