@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial;
+    background-color: #d5e8e6;
+    padding: 0px;
+    font-family: Lucida Bright;
 }
 .main {
     max-width: 1000px;
@@ -20,6 +20,7 @@ h1 {
 .row,
 .row > .column {
     padding: 8px;
+    position: relative;
 }
 .column {
     display: none;
@@ -43,71 +44,90 @@ h1 {
     display: block;
 }
 #tabLayout{
-    width: 200px;
+    width: 220px;
     position: fixed;
-    top: 0;
+    top: 66px;
     left: 0;
     height: 100%;
     z-index: 3;
     font-size: 17px;
     overflow: hidden;
-    background-color: #666666;
+    background-color: white;
 }
 #tabLayout a{
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
 #openScoreLayout{
-    width: 300px;
+    width: 330px;
     position: fixed;
-    top:0;
+    top:35px;
     right: 0;
-    height: 100%;
-    background-color: #666666;
+    height: 90%;
+    background-color: #c0392b;
     transition: 0.5s;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 1;
 }
 #closeScoreLayout{
     width: 50px;
     position: fixed;
-    top:0;
+    top:80px;
     right: 0;
-    height: 100%;
-    background-color: #666666;
+    height: 45px;
+    background-color:black;
     transition: 0.5s;
+    z-index: 1;
+}
+#closeScoreLayout:hover{
+    background-color: #e74c3c;
+    cursor: pointer;
 }
 #feed-container{
     display: none;
-    background-color: #818181;
+    background-color: #0070ab;
 }
 .btn {
     border: none;
     width: 100%;
     outline: none;
-    background-color: white;
+    background-color: black;
     cursor: pointer;
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 19px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
+    height: 62.11px;
+    line-height: 45px;
+    border-bottom: 1px dashed grey;
 }
 #lower-menu-dropdown{
     position: fixed;
     top:60px;
     right: 0;
     display: none;
+    z-index: 2;
+}
+#lower-menu-dropdown a{
+    font-size: 16px;
+}
+#lower-menu-dropdown .btn{
+    height: 45px;
+    line-height: 25px;
 }
 .feed-sub{
-    background-color: #818181;
+    background-color: black;
     color:white;
-}
-.btn:hover {
-    background-color: #ddd;
+    border-left: 10px solid #4db1e8;
+    height: 45px;
+    line-height: 30px;
+    padding-left: 60px;
 }
 .btn.active {
-    background-color: #666;
-    color: white;
+    background-color: white;
+    color: black;
 }
 .flip{
     -webkit-transition: linear 0.5s;
@@ -140,25 +160,37 @@ h1 {
 #lower-menu{
     position: fixed;
     bottom: 0;
-    width: 200px;
+    width: 220px;
 }
 #feed-container-icon{
     display: none;
     position: fixed;
     bottom: 50px;
     left:20%;
+    z-index: 1;
+}
+#feed-container-icon a{
+    font-size: 16px;
+    padding-left: 23px;
+    padding-right: 10px;
+}
+#feed-container-icon .btn{
+    border-left: 5px solid #4db1e8;
+}
+#feed-container-icon .btn:hover{
+    background-color: #336987;
 }
 #contact{
     display: none;
 }
 #openScoreLayout::-webkit-scrollbar-thumb{
-    background-color: #049dff;
+    background-color: default;
 }
 #openScoreLayout::-webkit-scrollbar-track{
-    background-color: #dddddd;
+    background-color: default;
 }
 #openScoreLayout::-webkit-scrollbar{
-    width:10px;
+    width:5px;
 }
 
 @media screen and (max-width:950px ) {
@@ -182,7 +214,7 @@ h1 {
         position: fixed;
         top:0;
         height: 60px;
-        background-color: #666666;
+        background-color: black;
         transition: none;
     }
     #tabLayout{
@@ -202,6 +234,7 @@ h1 {
         width: 20%;
         font-size: 14px;
         text-align: center;
+        line-height: 2px;
     }
     #contact{
         float: right;
@@ -216,6 +249,7 @@ h1 {
         top:30px;
         left: 50%;
         transform: translate(-50%, -50%);
+        color: black;
     }
     #display-btc{
         position: fixed;
@@ -225,6 +259,7 @@ h1 {
     #openScoreLayout{
         width: 100%;
         height: 100%;
+        top: 0;
     }
 }
 @media screen and (max-width: 590px){
@@ -263,4 +298,61 @@ h1 {
     #contact{
         display: block;
     }
+}
+#top_navbar_container{
+    position: fixed;
+    top: 0px;
+    height: 66px;
+    width: 100%;
+    background-color: black;
+    left: 0px;
+    z-index: 1;
+}
+#x-money{
+    color: gold;
+    position: relative;
+    top: -10px;
+}
+.btn_home:hover{
+    background-color: #e67e22;
+    color: white;
+}
+.btn_feed:hover{
+    background-color: #3498db;
+    color: white;
+}
+.btn_stockcricket:hover{
+    background-color: #2ecc71;
+    color: white;
+}
+.btn_quiz:hover{
+    background-color: #9b59b6;
+    color: white;
+}
+.btn_coupons:hover{
+    background-color: #1abc9c;
+    color: white;
+}
+.btn_feed_sub:hover{
+    background-color: #336987;
+    color: white;
+}
+.btn_share:hover{
+    background-color: #f1c40f;
+    color: white;
+}
+.btn_feedback:hover{
+    background-color: #e67e22;
+    color: white;
+}
+.btn_contact:hover{
+    background-color: #3498db;
+    color: white;
+}
+.btn_logout:hover{
+    background-color: #e74c3c;
+    color: white;
+}
+.btn_logout{
+    border-bottom: none;
 }

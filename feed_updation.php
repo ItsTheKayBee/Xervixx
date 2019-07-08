@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "xervixx_test";
+    $dbname = "xervixx";
     $con = new mysqli($servername,$username,$password,$dbname);
     $image_path_retrieval_query="select * from feed";
     if ($con->connect_error)
@@ -12,7 +12,7 @@
     $path_result=$con->query($image_path_retrieval_query);
     if ($path_result->num_rows > 0) {
         while($row = $path_result->fetch_assoc()) {
-            $image=$row['image'];
+            $image=$row['img_src'];
             $tag=$row['category'];
             $title=$row['title'];
             $caption=$row['caption'];
