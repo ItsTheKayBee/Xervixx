@@ -1,3 +1,6 @@
+<?php
+include 'db_connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 <link rel="stylesheet" href="stock-cricket.css">
 <body>
+<i class="fas fa-info-circle" onclick="tnc()"></i>
 <div class="container">
     <ul class="progress-bar">
         <li class=" active uncheckedli fas fa-check-circle">Select a Tournament</li>

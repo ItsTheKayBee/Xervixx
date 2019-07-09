@@ -1,6 +1,5 @@
 <?php
 include 'db_connect.php';
-$user_id=$_SESSION['user_id'];
 $credit_sql='select credit_score from user where user_id='.$user_id;
 $credit_res=$con->query($credit_sql);
 if($row=$credit_res->fetch_assoc()){

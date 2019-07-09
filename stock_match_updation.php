@@ -1,17 +1,7 @@
 <?php
-session_start();
-$user_id=$_SESSION['user_id'];
 $matchFormat = $_REQUEST["q"];
 $matchFormatSession=explode(',',$matchFormat);
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "xervixx_test";
-$con = new mysqli($servername,$username,$password,$dbname);
-if ($con->connect_error)
-{
-    die('No connection: ' . $con->connect_error);
-}
+include 'db_connect.php';
 $matches="SELECT matches.match_id,matches.start_date,matches.end_date, DATEDIFF(CURRENT_DATE(), `start_date`) as date_diff, TIMESTAMPDIFF(MINUTE, `start_date`,CURRENT_TIME()) as start_time_diff,TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME()) as end_time_diff FROM matches where format_id=";
 $user_lb_validation='select * from leaderboard where user_id='.$user_id.' and match_id=';
 if($matchFormatSession[0]==='t20'){
@@ -43,7 +33,7 @@ else{
         $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)<0 or (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and TIMESTAMPDIFF(MINUTE,`start_date`,CURRENT_TIME())<0))";
     }
     else if($matchFormatSession[1]=='on'){
-        $test_matches=$matches."3 and (DATEDIFF(CURRENT_DATE(),`start_date`)=0 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0))";
+        $test_matches=$matches."3 and (TIMESTAMPDIFF(MINUTE, `end_date`,CURRENT_TIME())<0 and TIMESTAMPDIFF(MINUTE, `start_date`, CURRENT_TIME())>0)";
     }
     else{
         $test_matches=$matches."3 and ((DATEDIFF(CURRENT_DATE(),`start_date`)>0 and TIMESTAMPDIFF(MINUTE, `end_date`, CURRENT_TIME())>0))";
@@ -84,8 +74,13 @@ if ($match_result->num_rows > 0) {
                     echo '<button class="btn" onclick="matchSelect(' . $matchFormat . ')">PLAY NOW</button></div>';
                 } else if ($start_time_diff > 0 && $end_time_diff < 0) {
                     $end_time_diff = str_replace('-', '', $end_time_diff);
-                    $end_time_diff = number_format($end_time_diff);
-                    $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    if(intdiv($end_time_diff, 1440)>=1){
+                        $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    }else if((intdiv($end_time_diff, 60) % 24)>=1){
+                        $hours = (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    }else{
+                        $hours = ($end_time_diff % 60) . " minutes";
+                    }
                     echo '<div class="match">';
                     echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                     echo '<span class="live">LIVE</span>';
@@ -100,7 +95,13 @@ if ($match_result->num_rows > 0) {
             } else {
                 if ($start_time_diff > 0 && $end_time_diff < 0) {
                     $end_time_diff = str_replace('-', '', $end_time_diff);
-                    $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    if(intdiv($end_time_diff, 1440)>=1){
+                        $hours = intdiv($end_time_diff, 1440) . ' days ' . (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    }else if((intdiv($end_time_diff, 60) % 24)>=1){
+                        $hours = (intdiv($end_time_diff, 60) % 24) . ' hours ' . ($end_time_diff % 60) . " minutes";
+                    }else{
+                        $hours = ($end_time_diff % 60) . " minutes";
+                    }
                     echo '<div class="match">';
                     echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                     echo '<span class="live">LIVE</span>';

@@ -1,15 +1,8 @@
 <?php
     $match_id = $_REQUEST["q"];
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "xervixx_test";
-    $con = new mysqli($servername, $username, $password, $dbname);
+    include 'db_connect.php';
     $show_lb="select user.name,user.username,leaderboard.score,leaderboard.money_won from leaderboard inner join user on user.user_id=leaderboard.user_id where leaderboard.match_id=".$match_id. " order by leaderboard.score DESC";
     $lb_results=$con->query($show_lb);
-    if ($con->connect_error) {
-        die('No connection: ' . $con->connect_error);
-    }
     if($lb_results->num_rows>0){
         $count=0;
         echo "<tr>

@@ -1,6 +1,5 @@
 <?php
     include 'db_connect.php';
-    $user_id=1;
     $q_no=$_REQUEST['q'];
     $questions="select * from questions inner join quiz on quiz.quiz_id=questions.quiz_id where CURRENT_DATE=quiz.quiz_date";
     $questions_array=$con->query($questions);
@@ -8,6 +7,7 @@
         $i=0;
         while($row=$questions_array->fetch_assoc()){
             $quiz_id=$row['quiz_id'];
+            $_SESSION['quiz_id']=$quiz_id;
             $question=$row['question'];
             $option1=$row['option1'];
             $option2=$row['option2'];
@@ -26,10 +26,10 @@
                     <div class="choice" id="C" onclick="checkAnswer(3)">'.$all_questions[$q_no][3].'</div>
                     <div class="choice" id="D" onclick="checkAnswer(4)">'.$all_questions[$q_no][4].'</div></div>';
         }else{
-            echo "You have already given this quiz. Come back later for a new quiz.";
+            echo 'Already attempted';
         }
     }else{
-        echo "No quiz present at this moment. come back later.";
+        echo 'no quiz present';
     }
 
 ?>

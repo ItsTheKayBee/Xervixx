@@ -1,5 +1,6 @@
 <?php
 include 'db_connect.php';
+$user_id=$_SESSION['user_id'];
 $level_sql="select xp from user where user_id=".$user_id;
 $level_res=$con->query($level_sql);
 if($row=$level_res->fetch_assoc()){

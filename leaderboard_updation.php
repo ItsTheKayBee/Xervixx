@@ -1,12 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "xervixx_test";
-    $con = new mysqli($servername, $username, $password, $dbname);
-    if ($con->connect_error) {
-        die('No connection: ' . $con->connect_error);
-    }
+    include 'db_connect.php';
     $lb_update_query="select match_id from matches where results_declared=0 and TIMESTAMPDIFF(MINUTE, end_date,CURRENT_TIME)>0";
     $lb_update_results=$con->query($lb_update_query);
     if($lb_update_results->num_rows>0){
@@ -15,7 +8,6 @@
             update_script($match_id,$con);
         }
     }
-
     function update_script($match_id,$con){
         $match_select = "select * from leaderboard where match_id=".$match_id;
         $match_results=$con->query($match_select);
@@ -51,12 +43,13 @@
                 } else {
                     echo "money error";
                 }
-                $x_money_query="select x_money from user where user_id=".$user_id;
+                $x_money_query="select x_money,xp from user where user_id=".$user_id;
                 $x_money_results=$con->query($x_money_query);
                 $user_money=$x_money_results->fetch_assoc();
                 $x_money=$user_money['x_money'];
+                $xp=$user_money['xp']+$money_won;
                 $x_money=$x_money+$money_won;
-                $money_user_update="update user set x_money=".$x_money." where user_id=".$user_id;
+                $money_user_update="update user set x_money=".$x_money.",xp=".$xp." where user_id=".$user_id;
                 if ($con->query($money_user_update) === true) {
                 } else {
                     echo "x-money update error";

@@ -1,6 +1,5 @@
 <?php
     include 'db_connect.php';
-    $user_id=$_SESSION['user_id'];
     $loan_taken=$_SESSION['loan_taken'];
     $user_query="select * from user where user_id=".$user_id;
     $user_res=$con->query($user_query);

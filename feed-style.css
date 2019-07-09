@@ -51,7 +51,7 @@ h1 {
     height: 100%;
     z-index: 3;
     font-size: 17px;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: white;
 }
 #tabLayout a{
@@ -85,8 +85,8 @@ h1 {
     cursor: pointer;
 }
 #feed-container{
-    display: none;
     background-color: #0070ab;
+    display: none;
 }
 .btn {
     border: none;
@@ -158,9 +158,9 @@ h1 {
     transform: rotate(180deg);
 }
 #lower-menu{
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 220px;
+    margin-bottom: 50px;
 }
 #feed-container-icon{
     display: none;
@@ -224,6 +224,7 @@ h1 {
         bottom: 0;
         top: auto;
         box-shadow: #dddddd -1px -5px 5px;
+        overflow-y: hidden;
     }
     #lower-menu{
         display: none;
@@ -301,11 +302,11 @@ h1 {
 }
 #top_navbar_container{
     position: fixed;
-    top: 0px;
+    top: 0;
     height: 66px;
     width: 100%;
     background-color: black;
-    left: 0px;
+    left: 0;
     z-index: 1;
 }
 #x-money{
@@ -355,4 +356,83 @@ h1 {
 }
 .btn_logout{
     border-bottom: none;
+}
+#tabLayout::-webkit-scrollbar{
+    width: 5px;
+}
+#tabLayout::-webkit-scrollbar-thumb{
+    background-color: black;
+}
+#tabLayout::-webkit-scrollbar-track{
+    background: none;
+}
+.post-info-container{
+    margin:10px 0 0 0;
+    font-size: 26px;
+}
+.fa-smile{
+    color: lightgray;
+}
+.fa-smile:hover{
+    color: gold;
+}
+.title{
+    margin: 0;
+    font-size: 20px;
+}
+.caption{
+    margin: 0 0 10px 0;
+    font-size: 15px;
+}
+.view-comments{
+    text-decoration: underline;
+    color: gray;
+    margin:10px 5px;
+}
+.view-comments:hover{
+    color: black;
+}
+.comment-inp{
+    margin: 10px 0 0 0;
+    padding: 5px;
+    width: 95%;
+}
+.fa-arrow-circle-right{
+    padding: 0 0 0 5px;
+    font-size: 20px;
+}
+#comment-toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+#comment-toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }

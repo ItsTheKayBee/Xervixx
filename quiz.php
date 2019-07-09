@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'db_connect.php';
 $_SESSION['score']=0;
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,6 @@ $_SESSION['score']=0;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body class="quiz_body">
@@ -29,6 +28,12 @@ $_SESSION['score']=0;
     </div>
     <div id="scoreContainer" style="display: none"></div>
 </div>
-<script src="quiz.js"></script>
 </body>
+<footer>
+    <script src="quiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</footer>
 </html>

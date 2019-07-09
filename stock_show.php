@@ -1,10 +1,6 @@
 <?php
 $sortOrder = $_REQUEST["q"];
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "xervixx_test";
-$con = new mysqli($servername,$username,$password,$dbname);
+include 'db_connect.php';
 $stock_sort_acc_to_name="select * from stocks";
 $stock_sort_acc_to_price="SELECT * FROM `stocks` ORDER BY `stocks`.`last_price` DESC";
 $stock_sort_acc_to_price_change="SELECT * FROM `stocks` ORDER BY `stocks`.`price_change` DESC";

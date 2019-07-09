@@ -1,5 +1,5 @@
-var tourSelected=0;
-var format;
+let tourSelected=0;
+let format;
 $(document).ready(function () {
     $("li.active").prevAll().addClass('checkedli');
     $("li.active").prevAll().removeClass('uncheckedli');
@@ -70,6 +70,7 @@ function progressIncrement() {
     $("li.active").prevAll().removeClass('uncheckedli');
 }
 function dragElement(e) {
+    timeCheck();
     if(e.parentElement.className==="all-players"){
         if(($('#stock-chosen').children().length<8)){
             e.style.display = 'none';
@@ -91,6 +92,7 @@ function dragElement(e) {
     }
 }
 function dropElement(e) {
+    timeCheck();
     e.style.display = 'none';
     var stockChosen = document.getElementById("all-players");
     stockChosen.insertBefore(e,stockChosen.childNodes[0]);
@@ -114,6 +116,7 @@ function teamSelected(){
 }
 function payPool(teamChosenFinal) {
     var teamChosen=teamChosenFinal.split(',');
+    timeCheck();
     if(teamChosen.length===5) {
         sessionStorage.setItem('teamChosen',teamChosenFinal.toString());
         progressIncrement();
@@ -133,6 +136,31 @@ function payPool(teamChosenFinal) {
         teamPlayers();
     }
 }
+function timeCheck() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var shouldPlay=this.responseText;
+            console.log(shouldPlay);
+            if(shouldPlay=='stop'){
+                swal({
+                    title:"Play stopped due to rain",
+                    text:"It seems you were late in selecting a team",
+                    type: "warning",
+                    allowClickOutside: false,
+                    button:"Try next time",
+                })
+                    .then((stop)=>{
+                        if(stop){
+                            location.replace('stock_cricket.php');
+                        }
+                    })
+            }
+        }
+    };
+    xmlhttp.open("GET", "time_check.php?q="+format+","+ tourSelected, true);
+    xmlhttp.send();
+}
 function teamPlayers() {
     var teamChosen=[];
     teamChosen=sessionStorage.getItem('teamChosen').split(',');
@@ -143,6 +171,7 @@ function teamPlayers() {
 }
 function capSelected(x) {
     var pool;
+    timeCheck();
     if(x.id!=='captain'){
         $(x).css('background-color','#11943d');
         $(x).css('color','white');
@@ -227,6 +256,7 @@ function capSelected(x) {
     }
 }
 function reg_comp() {
+    timeCheck();
     var team=sessionStorage.getItem('teamChosen');
     var match_id=tourSelected;
     var XMLHttp = new XMLHttpRequest();
@@ -322,4 +352,24 @@ function showLB(matchID) {
 }
 function closeLB() {
     $('.leaderboard').hide();
+}
+function tnc() {
+    var htp="1. This is a virtual stock market cricket game." +
+        "<br>2. This game does not use real money for playing. But the benefits can be used to avail attractive discounts on other purchases." +
+        "<br>3. Every user can play any/all of the three format(s) of the cricket game." +
+        "<br>4. T20 matches are shorter matches with faster returns for the impatient. They are held every weekday from 9:15 AM to 11:00 AM." +
+        "<br>5. ODI matches are a day long tournament for higher returns. They are held every weekday from 9:15 AM to 3:30 PM." +
+        "<br>6. Test matches are week long tournaments for testing the patience of the player. The returns are the highest in these matches. They are held once a week from 9:15 AM Monday to 3:30 PM Friday." +
+        "<br>7. Once a match is selected, a user gets a list of top 101 companies out of which 5 companies in total have to be selected." +
+        "<br>8. A player can sort the list as per his need." +
+        "<br>9. A player, if confused between selecting the companies or lacks time, can choose to automatically select the companies." +
+        "<br>10. Once the company list is final, a player will be prompted to select a captain. The role of the captain company is to double its score." +
+        "<br>11. The score will be calculated based on the percentage price change of every company in the player's team and a cumulative score will be calculated." +
+        "<br>12. At the end of the tournament, a leaderboard will be declared and x-money would be distributed to the top 50% participants in decreasing fashion from top to bottom of the leaderboard." +
+        "<br>13. x-money received can be used to purchase coupons which can be used to avail attractive offers.";
+    Swal.fire({
+        title: 'How to play',
+        html:htp,
+        type: 'info',
+    })
 }

@@ -6,8 +6,16 @@
 </head>
 </html>
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "xervixx";
+$con = new mysqli($servername,$username,$password,$dbname);
+if ($con->connect_error)
+{
+    die('No connection: ' . $con->connect_error);
+}
 session_start();
-include 'db_connect.php';
 if(isset($_POST['submit'])){
     $uname=$_POST['Username'];
     $password=$_POST['Password'];

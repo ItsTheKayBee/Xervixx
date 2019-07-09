@@ -44,8 +44,16 @@
 </footer>
 </html>
 <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "xervixx";
+    $con = new mysqli($servername,$username,$password,$dbname);
+    if ($con->connect_error)
+    {
+        die('No connection: ' . $con->connect_error);
+    }
     session_start();
-    include 'db_connect.php';
     if(isset($_POST['submit'])) {
         $phone = $_POST['phone'];
         $otp = $_POST['otp'];
@@ -59,31 +67,31 @@
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['loan_taken'] = $loan_taken;
                 echo '<script>
-            swal({
-                title: "Logged in successfully!",
-                icon: "success",
-                button:"Ok"
-            })
-                .then((Ok) => {
-                    if (Ok) {
-                        location.replace("main.php");
-                    }
-                });
-            </script>';
+                swal({
+                    title: "Logged in successfully!",
+                    icon: "success",
+                    button:"Ok"
+                })
+                    .then((Ok) => {
+                        if (Ok) {
+                            location.replace("main.php");
+                        }
+                    });
+                </script>';
             } else {
                 echo '<script>
-            swal({
-                title: "Incorrect Phone number",
-                text: "Please re-enter",
-                icon: "warning",
-                button: "Try Again",
-            })
-                .then((Ok) => {
-                    if (Ok) {
-                        location.replace("login.php");
-                    }
-                });
-            </script>';
+                swal({
+                    title: "Incorrect Phone number",
+                    text: "Please re-enter",
+                    icon: "warning",
+                    button: "Try Again",
+                })
+                    .then((Ok) => {
+                        if (Ok) {
+                            location.replace("login.php");
+                        }
+                    });
+                </script>';
             }
         } else {
             echo '<script>
