@@ -128,8 +128,8 @@ function payPool(teamChosenFinal) {
         $('.in-active').removeClass('act-ive');
         $('h3').hide();
         $('h5').hide();
-        $('#pay-game').prepend('<h5 align="center" style="color:lightblue;margin: 0;">Select a captain (score of captain doubles)</h5>');
-        $('#pay-game').prepend('<h3 align="center" style="padding:5px;color:white;margin: 0;">Review your team and pay pool</h3>');
+        $('#pay-game').prepend('<h5 align="center" style="color:lightblue;margin: 0;">SELECT A CAPTAIN (SCORE OF CAPTAIN DOUBLES)</h5>');
+        $('#pay-game').prepend('<h3 align="center" style="padding:5px;color:white;margin: 0;">REVIEW YOUR TEAM AND PAY POOL</h3>');
         teamPlayers();
     }
 }
@@ -144,7 +144,7 @@ function teamPlayers() {
 function capSelected(x) {
     var pool;
     if(x.id!=='captain'){
-        $(x).css('background-color','#c00');
+        $(x).css('background-color','#11943d');
         $(x).css('color','white');
         $('#captain').css('color','black');
         $('#captain').css('background-color','#ddd');
@@ -300,7 +300,7 @@ function caretUpDown() {
         value = value.replace('%', '');
         if (parseFloat(value) > 0) {
             stockChange[i].children[0].setAttribute('class', 'fa fa-caret-up');
-            stockChange[i].setAttribute('style', 'color:#55b776');
+            stockChange[i].setAttribute('style', 'color:#00862d');
         } else if (parseFloat(value) < 0) {
             stockChange[i].children[0].setAttribute('class', 'fa fa-caret-down');
             stockChange[i].setAttribute('style', 'color:#c00');
