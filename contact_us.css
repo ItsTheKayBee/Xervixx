@@ -1,6 +1,6 @@
 #contact_form{
     display:block;
-    width:330px;
+    width:400px;
     padding:40px;
     position: absolute;
     top: 50%;
@@ -45,7 +45,7 @@ textarea{
     margin:0 10px;
     border: 1px solid white;
 }
-#contact_form input[type="submit"]{
+#contact_form input[type="button"]{
     width: 200px;
     background:none;
     border: 2px solid #3498db;
@@ -55,7 +55,7 @@ textarea{
     cursor:pointer;
     margin: 25px 0 12px 65px;
 }
-#contact_form input[type="submit"]:hover{
+#contact_form input[type="button"]:hover{
     background-color: #3498db;
 }
 #c_msg{

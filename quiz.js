@@ -38,7 +38,7 @@ var renderingQuestion=function renderQuestion(){
                 })
                     .then((Ok) => {
                         if (Ok) {
-                            location.replace("main.php");
+                            location.replace("home.php");
                         }
                     });
             }else if(resText==='no quiz present'){
@@ -51,7 +51,7 @@ var renderingQuestion=function renderQuestion(){
                 })
                     .then((Ok) => {
                         if (Ok) {
-                            location.replace("main.php");
+                            location.replace("home.php");
                         }
                     });
             }else{
@@ -142,7 +142,7 @@ var scoreRendering= function scoreRender(){
             })
                 .then((ok)=> {
                     if (ok) {
-                        location.replace("main.php");
+                        location.replace("home.php");
                     }
                 });
         }

@@ -19,16 +19,9 @@ session_start();
 if(isset($_POST['submit'])){
     $uname=$_POST['Username'];
     $password=$_POST['Password'];
-    if($uname==NULL){
-        $phone=$_POST['phone'];
-        $otp=$_POST['otp'];
-    }
     if($uname!=NULL){
         $user_validation_query="SELECT * FROM user where username='".$uname."' AND password='".md5($password)."'";
         $result=$con->query($user_validation_query);
-    }else if($otp=='123') {
-        $otp_validation_query = "SELECT * FROM user where contact='" . $phone . "'";
-        $result = $con->query($otp_validation_query);
     }
     if($result->num_rows==1){
         $row=$result->fetch_assoc();
@@ -44,7 +37,7 @@ if(isset($_POST['submit'])){
                 })
                 .then((Ok) => {
                     if (Ok) {
-                        location.replace("main.php");
+                        location.replace("home.php");
                     }
                 });
                 </script>';

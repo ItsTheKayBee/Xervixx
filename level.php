@@ -1,6 +1,5 @@
 <?php
 include 'db_connect.php';
-$user_id=$_SESSION['user_id'];
 $level_sql="select xp from user where user_id=".$user_id;
 $level_res=$con->query($level_sql);
 if($row=$level_res->fetch_assoc()){
@@ -15,6 +14,7 @@ if($row=$level_res->fetch_assoc()){
             $left=0;
             $right=$angle_level;
         }
+        $color='';
         if($level_extra>0 && $level_extra<10){
             $color='red';
         }else if($level_extra>=10 && $level_extra<30){

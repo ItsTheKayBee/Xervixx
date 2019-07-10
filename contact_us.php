@@ -1,5 +1,8 @@
+<?php
+include 'db_connect.php';
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="contact_us.css">
@@ -12,24 +15,6 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <div id="tabLayout">
-        <a class="btn" href="main.php"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
-        <a class="btn active feed-feed" onclick="filterSelection('all')" href="feed.html"><i class="fa fa-mobile"></i>&nbsp;&nbsp;&nbsp;Feed &nbsp;<span class="fa fa-caret-down flip"></span></a>
-        <div id="feed-container">
-            <a class="btn feed-sub" onclick="filterSelection('protecting')"> Protecting</a>
-            <a class="btn feed-sub" onclick="filterSelection('investing')"> Investing</a>
-            <a class="btn feed-sub" onclick="filterSelection('financing')"> Financing</a>
-            <a class="btn feed-sub" onclick="filterSelection('advising')"> Advising</a>
-        </div>
-        <a class="btn" href=""><i class="fa fa-chart-line"></i>&nbsp;&nbsp;Stock Cricket</a>
-        <a class="btn" href="quiz.html"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;Quiz</a>
-        <a class="btn" href="coupons.php"><i class="fa fa-ticket-alt"></i>&nbsp;&nbsp;Coupons</a>
-        <div id="lower-menu">
-            <a class="btn" href=""><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share</a>
-            <a class="btn" href=""><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
-        </div>
-    </div>
-
     <div id="contact_container">
         <form name="contact_form" id="contact_form">
             <h2>CONTACT US</h2>
@@ -46,9 +31,34 @@
             <div>
                 <textarea rows="4" cols="28"></textarea><br>
             </div>
-            <input type="submit" name="submit" value="SEND MESSAGE">
+            <input type="button" name="submit" onclick="feedBack()" value="SEND FEEDBACK">
         </form>
     </div>
-
 </body>
+<script>
+    function feedBack(){
+        Swal.mixin({
+            input: 'text',
+            confirmButtonText: 'Next',
+            showCancelButton: true,
+            progressSteps: ['1', '2', '3']
+        }).queue([
+            {
+                title: 'Do you like the stock cricket game?',
+            },
+            'Do you find paying loans',
+            'Do you find your feed personalized and informative?'
+        ]).then((result) => {
+            if (result.value) {
+                Swal.fire({
+                    title: 'Thank you for reaching to us!',
+                    confirmButtonText: 'Request a Call!'
+                })
+            }
+        })
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </html>

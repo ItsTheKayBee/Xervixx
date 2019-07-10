@@ -236,7 +236,7 @@ function capSelected(x) {
                                         })
                                             .then((Earn)=>{
                                                 if(Earn){
-                                                    location.replace('main.php');
+                                                    location.replace('home.php');
                                                 }
                                             });
                                     }
@@ -347,7 +347,7 @@ function showLB(matchID) {
             $('.leaderboard').show();
         }
     };
-    xmlhttp.open("GET", "leaderboard_show.php?q=" + matchID, true);
+    xmlhttp.open("GET", "game_leaderboard_show.php?q=" + matchID, true);
     xmlhttp.send();
 }
 function closeLB() {

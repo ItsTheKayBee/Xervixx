@@ -1,3 +1,11 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+    if(isset($_SESSION['user_id'])){
+        header('Location: home.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +61,9 @@
     {
         die('No connection: ' . $con->connect_error);
     }
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     if(isset($_POST['submit'])) {
         $phone = $_POST['phone'];
         $otp = $_POST['otp'];
@@ -74,7 +84,7 @@
                 })
                     .then((Ok) => {
                         if (Ok) {
-                            location.replace("main.php");
+                            location.replace("home.php");
                         }
                     });
                 </script>';

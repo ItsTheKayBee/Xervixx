@@ -237,29 +237,40 @@ function openComments(postId) {
     xmlhttp.open("POST", "view_comments.php?q="+postId, true);
     xmlhttp.send();
 }
-function feedBack() {
-    Swal.mixin({
-        input: 'text',
-        confirmButtonText: 'Next &rarr;',
-        showCancelButton: true,
-        progressSteps: ['1', '2', '3']
-    }).queue([
-        {
-            title: 'Question 1',
-            text: 'Chaining swal2 modals is easy'
-        },
-        'Question 2',
-        'Question 3'
-    ]).then((result) => {
-        if (result.value) {
+function showOLB() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("leaderboard").innerHTML = this.responseText;
+            $('.leaderboard').show();
+            $('.leaderboard').animate({
+                scrollTop: $('.current').offset().top
+            }, 1000, function() {
+            });
+        }
+    };
+    xmlhttp.open("GET", "overall_leaderboard_show.php?", true);
+    xmlhttp.send();
+}
+function closeLB() {
+    $('.leaderboard').hide();
+}
+function referral() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var code=this.responseText;
+            console.log(code);
             Swal.fire({
-                title: 'All done!',
-                html:
-                    'Your answers: <pre><code>' +
-                    JSON.stringify(result.value) +
-                    '</code></pre>',
-                confirmButtonText: 'Lovely!'
+                title: "Share and Earn",
+                html:"Friend joins, friend earns 100 x-money<br>" +
+                    "Friend plays his first stock cricket game, you earn 100 x-money.<br>" +
+                    "Share your referral code: "+code,
+                button: true,
             })
         }
-    })
+    };
+    xmlhttp.open("GET", "referral_code.php?", true);
+    xmlhttp.send();
 }
+
