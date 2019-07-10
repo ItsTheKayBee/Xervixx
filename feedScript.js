@@ -181,7 +181,7 @@ function logout() {
                             var xmlhttp = new XMLHttpRequest();
                             xmlhttp.onreadystatechange = function () {
                                 if (this.readyState === 4 && this.status === 200) {
-                                    location.replace('login.php');
+                                    location.replace('main.php');
                                 }
                             };
                             xmlhttp.open("POST", "logout.php?q=true", true);
@@ -263,8 +263,7 @@ function referral() {
             console.log(code);
             Swal.fire({
                 title: "Share and Earn",
-                html:"Friend joins, friend earns 100 x-money<br>" +
-                    "Friend plays his first stock cricket game, you earn 100 x-money.<br>" +
+                html:"A friend joins using your referral code and you both earn 100&nbsp;&nbsp; &nbsp;&nbsp; x-money coins<br>"+
                     "Share your referral code: "+code,
                 button: true,
             })

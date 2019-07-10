@@ -4,7 +4,7 @@ include 'db_connect.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Contact Us</title>
+    <title>Contact</title>
     <link rel="stylesheet" type="text/css" href="contact_us.css">
     <link rel="stylesheet" href="feed-style.css">
     <link rel="stylesheet" href="home-style.css">
@@ -17,7 +17,7 @@ include 'db_connect.php';
 <body>
     <div id="contact_container">
         <form name="contact_form" id="contact_form">
-            <h2>CONTACT US</h2>
+            <h2>CONTACT</h2>
             <div class="c_style">
                 <input type="text" name="c_name" placeholder="Name"><br>
             </div>
@@ -29,9 +29,13 @@ include 'db_connect.php';
             </div>
             <p id="c_msg">Message:</p>
             <div>
-                <textarea rows="4" cols="28"></textarea><br>
+                <textarea style="resize: none" rows="4" cols="28"></textarea><br>
             </div>
             <input type="button" name="submit" onclick="feedBack()" value="SEND FEEDBACK">
+            <footer>
+                <span style="float: left;"><i class="fa fa-phone" style="width:30px"></i> Phone: +91 1234567890</span><br>
+                <span style="float: left"><i class="fa fa-envelope" style="width:30px"> </i> Email: support@xervixx.com</span><br>
+            </footer>
         </form>
     </div>
 </body>
@@ -46,7 +50,7 @@ include 'db_connect.php';
             {
                 title: 'Do you like the stock cricket game?',
             },
-            'Do you find paying loans',
+            'Do you find paying loans easy and time saving',
             'Do you find your feed personalized and informative?'
         ]).then((result) => {
             if (result.value) {

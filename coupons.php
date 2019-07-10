@@ -32,13 +32,13 @@ include 'db_connect.php';
         <a class="btn btn_coupons active" href="coupons.php" style="border-left: 10px solid #16a085"><i class="fa fa-ticket-alt"></i>&nbsp; Coupons</a>
         <div id="lower-menu">
             <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
-            <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact Us&nbsp;</a>
+            <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
             <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
         </div>
     </div>
     <div id="lower-menu-dropdown">
         <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
-        <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact Us&nbsp;</a>
+        <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
         <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
     </div>
     <div id="feed-container-icon">

@@ -23,7 +23,7 @@ function logout() {
                             var xmlhttp = new XMLHttpRequest();
                             xmlhttp.onreadystatechange = function () {
                                 if (this.readyState === 4 && this.status === 200) {
-                                    location.replace('login.php');
+                                    location.replace('main.php');
                                 }
                             };
                             xmlhttp.open("POST", "logout.php?q=true", true);
