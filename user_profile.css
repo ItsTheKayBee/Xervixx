@@ -41,6 +41,26 @@
     -webkit-transform: scaleX(1.06) scaleY(1.03);
     transform: scaleX(1.03) scaleY(1.15);
 }
+.leaderboard{
+    display: none;
+    width: 55%;
+    top: 10%;
+    position: fixed;
+    left: 56%;
+    margin-left: -37.5%;
+    background-color: #059e74;
+    border-radius: 5px;
+    box-shadow: #818181 1px 1px 1px;
+    overflow-y: auto;
+    height: 76%;
+    overflow-x: hidden;
+    z-index: 10;
+}
+.leaderboard p{
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+}
 .profile-pic{
     border-radius: 50%;
     width: 200px;
@@ -86,7 +106,7 @@ body{
     overflow-x: hidden;
 }
 .fa-caret-left{
-    position: absolute;
+    position: fixed;
     border: none;
     transition: 0.3s;
     width: 90px;

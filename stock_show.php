@@ -8,9 +8,9 @@ if ($con->connect_error)
 {
     die('No connection: ' . $con->connect_error);
 }
-if($sortOrder==='Percentage Change')
+if($sortOrder==='PERCENTAGE CHANGE')
     $stocks_result=$con->query($stock_sort_acc_to_price_change);
-else if($sortOrder==='Last Price')
+else if($sortOrder==='LAST PRICE')
     $stocks_result=$con->query($stock_sort_acc_to_price);
 else
     $stocks_result=$con->query($stock_sort_acc_to_name);

@@ -242,6 +242,7 @@ function showOLB() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             document.getElementById("leaderboard").innerHTML = this.responseText;
+            $('#ranking').html(this.responseText);
             $('.leaderboard').show();
             $('.leaderboard').animate({
                 scrollTop: $('.current').offset().top

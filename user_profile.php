@@ -5,9 +5,9 @@ include 'db_connect.php';
 <head>
     <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>Account</title>
-    <link rel="stylesheet" href="home-style.css">
     <link rel="stylesheet" href="feed-style.css">
     <link rel="stylesheet" href="stock-cricket.css">
+    <link rel="stylesheet" href="home-style.css">
     <link rel="stylesheet" href="user_profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
@@ -37,14 +37,14 @@ include 'db_connect.php';
                 <?php include 'tasks.php';?>
             </dl>
         </div>
-        <button onclick="showOLB()">Global leaderboard</button>
+        <button onclick="showOLB()" class="olb_btn">VIEW GLOBAL LEADERBOARD</button>
         <div class="leaderboard">
             <h1>&nbsp;&nbsp;
                 <i class="fa fa-trophy" style="color: gold;font-size: 32px;"></i>
                 &nbsp;GLOBAL RANKING
                 <i class="fa fa-times-circle" onclick="closeLB()" style="float: right;padding-right: 15px"></i>
             </h1>
-            <table id="leaderboard">
+            <table id="ranking">
             </table>
         </div>
     </div>

@@ -59,7 +59,7 @@ function matchSelect(match) {
     $('.tourney').hide();
     $('.tourney-menu').hide();
     $('.stock-select').show();
-    sort('Name');
+    sortStocks('Name');
     progressIncrement();
     $(document.body).css('overflow','hidden');
     window.scrollTo(0,0);
@@ -312,7 +312,7 @@ function randomSelection(x) {
         }
     }
 }
-function sort(x) {
+function sortStocks(x) {
     var sortOrder=x.value;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -325,6 +325,7 @@ function sort(x) {
     xmlhttp.send();
 }
 function caretUpDown() {
+    var stockInfo = document.getElementsByClassName('stock-info');
     var stockChange = document.getElementsByClassName('stock-change');
     for (i = 0; i < stockChange.length; i++) {
         var value = document.getElementsByClassName('stock-change')[i].textContent;
@@ -332,9 +333,11 @@ function caretUpDown() {
         if (parseFloat(value) > 0) {
             stockChange[i].children[0].setAttribute('class', 'fa fa-caret-up');
             stockChange[i].setAttribute('style', 'color:#00862d');
+            stockInfo[i].setAttribute('style', 'background-color:#7ee07d');
         } else if (parseFloat(value) < 0) {
             stockChange[i].children[0].setAttribute('class', 'fa fa-caret-down');
             stockChange[i].setAttribute('style', 'color:#c00');
+            stockInfo[i].setAttribute('style', 'background-color:#ff9398');
         } else {
             stockChange[i].children[0].setAttribute('style', 'color:#dddddd');
         }

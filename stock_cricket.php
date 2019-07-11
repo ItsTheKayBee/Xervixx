@@ -92,7 +92,7 @@ include 'db_connect.php';
             <input type="radio" value="Automatic" name="selection" onchange="randomSelection(this)">AUTOMATIC
         </label><br>
         <label id="sort">
-            <select onchange="sort(this)">
+            <select onchange="sortStocks(this)">
                 <option>SORT BY</option>
                 <option>NAME</option>
                 <option>PERCENTAGE CHANGE</option>
@@ -107,7 +107,7 @@ include 'db_connect.php';
             <option>AUTOMATIC</option>
         </select>
         <input type="text" id="company-name-1" onkeyup="search()" placeholder="  Enter name">
-        <select onchange="sort(this)">
+        <select onchange="sortStocks(this)">
             <option>SORT BY</option>
             <option>NAME</option>
             <option>PERCENTAGE CHANGE</option>
