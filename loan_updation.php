@@ -14,7 +14,7 @@
                     $emi_res=$con->query($emi_query);
                     $loan_type=$loans['loan_type'];
                     echo '<div class="emi_tracker" ><div id="emi-info">
-                    <p class="loan_type">' .$loan_type.' Loan</p>';
+                    <p class="loan_type">' .$loan_type.' LOAN</p>';
                     if($emi_res->num_rows>0) {
                         while ($emis = $emi_res->fetch_assoc()) {
                             $paid_date=$emis['paid_date'];
@@ -22,9 +22,9 @@
                             $due_date=$emis['due_date'];
                             $due_diff=$emis['due_date_diff'];
                             if($due_diff>0){
-                                $due_diff_text=$due_diff.' days late. Pay ASAP';
+                                $due_diff_text=$due_diff.' DAYS POST DUE. PAY ASAP';
                             }else{
-                                $due_diff_text=str_replace('-','',$due_diff).' days are left to pay';
+                                $due_diff_text=str_replace('-','',$due_diff).' DAYS LEFT';
                             }
                             if($paid_date=='0000-00-00'){
                                 $curr_instl_no=$instl_no;
@@ -34,7 +34,7 @@
                     }
                     $due_date_time=date_create($due_date);
                     $due_formatted=date_format($due_date_time,'d-m-Y');
-                    echo '<span class="due-date"> Due on:<br>'.$due_formatted.'</span><p class="installment">Next Installment no. '.$curr_instl_no.'<span class="days_left">'.$due_diff_text.'</span></p><input type="button" name="pay" value="PAY NOW" class="pay_btn"></div><ul class="progressbar">';
+                    echo '<span class="due-date"> NEXT DUE ON <i class="fa fa-long-arrow-right"></i> '.$due_formatted.'</span><p class="installment"> NEXT INSTALLMENT NO. <i class="fa fa-long-arrow-right"></i> ' .$curr_instl_no.'<span class="days_left">'.$due_diff_text.'</span></p><input type="button" name="pay" value="PAY NOW" class="pay_btn"></div><ul class="progressbar">';
                     $emi_res=$con->query($emi_query);
                     if($emi_res->num_rows>0) {
                         while ($emis = $emi_res->fetch_assoc()) {

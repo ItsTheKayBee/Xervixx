@@ -57,13 +57,22 @@ include 'db_connect.php';
             </div>
             <div id="progressbar_container" style="left: 240px;top:120px;">
                 <span id="x_money_div" style="margin: 0 50px 0 0;">
-                    <i>Your x-money balance is:</i>
-                    <?php include 'x_money_credit.php';?>
-                </span>
-                <p id="tag_emi"><i>PAY EMI ON TIME AND INCREASE YOUR CREDIT SCORE!!!</i></p>
+                    <i>x-MONEY :</i>
+                    <?php include 'x_money_credit.php';?> <i style="color:yellow" class="fas fa-coins"></i>
+                </span><br><br><br>
+                <div class="steps">
+                    <p id="tag_emi"><i>WANT TO INCREASE YOUR CREDIT SCORE ?</i></p>
+                    <div id="steps_container">
+                        <div class="steps_div"><p class="steps_content">1. PAY YOUR EMI BEFORE 7 DAYS</p></div>
+                        <div class="steps_div"><p class="steps_content">2. INCREASE YOUR CREDIT SCORE & GET x-MONEY</p></div>
+                        <div class="steps_div"><p class="steps_content">3. USE x-MONEY TO AVAIL EXCITING DISCOUNTS</p></div>
+                    </div>
+                    <p id="emi_pay"><a href="#emi_progress" style="text-decoration: none;"><i>PAY NOW</i></a></p>
+                </div>
+                <p id="emi_progress">EMI PROGRESS</p><hr>
                 <?php include 'loan_updation.php';?>
             </div>
-            <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px; border: 2px solid darkgray;background-color: white;">
+            <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">
                 <div class="container" style="margin-left: -170px;margin-top:50px;position: absolute">
                     <?php include 'level.php';?>
                 </div>

@@ -1,3 +1,65 @@
+body{
+    background-color: #ecf0f1;
+}
+.steps{
+    width: 80%;
+    height: 80%;
+    background-color: #0e0e92;
+    opacity: 0.9;
+    margin-bottom: 100px;
+}
+.steps_div{
+    height: 100px;
+    background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
+    position: relative;
+    width: 650px;
+    left: 380px;
+    margin-bottom: 20px;
+    margin-top: -2px;
+    border-radius: 80px;
+}
+.steps_div:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 290px;
+    background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
+    -webkit-transform: skewX(45deg);
+    -moz-transform: skewX(45deg);
+    -ms-transform: skewX(45deg);
+    -o-transform: skewX(45deg);
+    transform: skewX(45deg);
+    z-index: -1;
+}
+.steps_div:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 290px;
+    background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
+    -webkit-transform: skewX(-45deg);
+    -moz-transform: skewX(-45deg);
+    -ms-transform: skewX(-45deg);
+    -o-transform: skewX(-45deg);
+    transform: skewX(-45deg);
+    z-index: -1;
+}
+#steps_container{
+    margin-top: -20px;
+}
+.steps_content{
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: -250px;
+    top: 20px;
+    font-weight: bold;
+}
 .progress{
     width: 150px;
     height: 150px;
@@ -6,7 +68,7 @@
     margin: 0 auto;
     box-shadow: none;
     position: relative;
-    top: -40px;
+    top: -50px;
 }
 .progress:after{
     content: "";
@@ -110,7 +172,7 @@
     color:white;
 }
 .daily-task-list{
-    margin-top: 20px;
+    margin-top: 30px;
     list-style: none;
     font-size: 16px;
     text-align: left;
@@ -125,15 +187,12 @@
 }
 .daily-task-div{
     background-color: #ddd;
-    margin-top: 10px;
+    margin-top: 20px;
     height: max-content;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    border: 2px solid #f1c40f;
+    padding: 10px;
+    border: 3px solid #1b32a5;
     border-radius: 10px;
-    box-shadow: inset -1px -1px 2px 1px;
+    outline: none;
 }
 .daily-task-div:hover{
     cursor: pointer;
@@ -157,6 +216,9 @@
     margin-right: auto;
     display: none;
     z-index: 5;
+    color: yellow;
+    text-shadow: 3px 1px #0e0e92;
+    font-weight: bolder;
 }
 ::selection{
     color:white;
@@ -176,16 +238,20 @@ body::-webkit-scrollbar-track{
     background: initial;
 }
 .emi_tracker{
-    width:80%;
-    height: 215px;
-    border: 2px solid black;
-    margin-bottom: 20px;
+    width: 80%;
+    height: 365px;
+    margin-bottom: 40px;
     overflow-x: auto;
     overflow-y: hidden;
+    /*background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);*/
+    cursor:pointer;
+    border-radius:20px ;
+    box-shadow: -1px -1px 5px 1px grey;
+    /*background-color: whitesmoke;*/
 }
 .progressbar{
     counter-reset: step;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-left: -50px;
     display: inline-flex;
 }
@@ -196,6 +262,9 @@ body::-webkit-scrollbar-track{
     position: relative;
     text-align: center;
     margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #524b4b;
 }
 .progressbar li:before{
     content: counter(step);
@@ -203,7 +272,7 @@ body::-webkit-scrollbar-track{
     width: 30px;
     height: 30px;
     line-height: 29px;
-    border: 2px solid #ddd;
+    border: 2px solid #524b4b;
     display: block;
     text-align: center;
     margin: 0 auto 20px auto;
@@ -215,7 +284,7 @@ body::-webkit-scrollbar-track{
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #ddd;
+    background-color: #524b4b;
     top: 15px;
     left: -50%;
     z-index: -1;
@@ -224,17 +293,22 @@ body::-webkit-scrollbar-track{
     content: none;
 }
 .progressbar li.active{
-    color: green;
+    color: #007300;
+    font-size: 18px;
+    font-weight: bolder;
 }
 .progressbar li.active:before{
-    border-color: green;
+    border-color: #007300;
     content: "\2714";
 }
 .progressbar li.active+li:after{
-    background-color: green;
+    background-color: #007300;
+
 }
 .progressbar li.default{
     color: red;
+    font-size: 18px;
+    font-weight: bolder;
 }
 .progressbar li.default:before{
     border-color: red;
@@ -245,53 +319,81 @@ body::-webkit-scrollbar-track{
 }
 .progressbar li.defaulter{
     color: red;
+    font-size: 18px;
+    font-weight: bolder;
 }
 .progressbar li.defaulter:before{
     border-color: red;
     content: "\2718";
 }
 .progressbar li.upnext{
-    color: blue;
+    color: #0e0e92;
+    font-size: 18px;
+    font-weight: bolder;
 }
 .progressbar li.upnext:before{
-    border-color: blue;
+    border-color: #0e0e92;
 }
 .installment{
-    margin-left: 10px;
+    margin-left: 29px;
+    font-size: 19px;
     font-weight: bolder;
-    font-size: 18px;
     width: 100%;
+    margin-top: 65px;
+    color: #0e0e92;
 }
 .loan_type{
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bolder;
-    margin-top: 2px;
-    margin-left: 40%;
+    margin-top: 15px;
+    margin-left: 31%;
+    color: white;
+    background-color: #0e0e92;
+    width: 260px;
+    padding: 7px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .days_left{
-    margin-left: 250px;
-    padding: 3px;
-    height: 5px;
-    border:2px solid green;
-    color: green;
+    margin-left: 450px;
+    padding: 5px;
+    height: 40px;
+    border: 3px solid #0e0e92;
     cursor: default;
+    position: absolute;
+    top: 70px;
+    line-height: 1.35;
+    font-size: 18px;
+    color: #0e0e92;
+    font-weight: bolder;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 p,span,h1,h2,h3,h4,h5,h6,dt,div{
     cursor: default;
 }
 .pay_btn{
     background: none;
-    border: 2px solid #3498db;
-    color: #3458df;
-    padding: 4px;
-    font-size: 16px;
-    cursor:pointer;
+    border: 2px solid #0e0e92;
+    color: #0e0e92;
+    background-color: white;
+    padding: 7px 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
     position: absolute;
-    right: 270px;
-    top:20px;
+    right: 330px;
+    top: 305px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    outline: none;
 }
 .pay_btn:hover{
-    background-color: #3498db;
+    background-color: #0e0e92;
     color: white;
 }
 #emi-info{
@@ -305,11 +407,56 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
     left: 310px;
 }
 #tag_emi{
-    font-size: 18px;
+    font-size: 35px;
     font-weight: bolder;
     margin-top: -30px;
-    color: blueviolet;
-    margin-left: -25px;
+    color: whitesmoke;
+    margin-left: 40px;
+    /*border: 5px solid #0e0e92;*/
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+}
+#emi_pay{
+    border: 3px solid #0e0e92;
+    padding: 10px;
+    position: relative;
+    width: 35%;
+    left: 310px;
+    text-align: center;
+    padding: 2px;
+    margin-top: 28px;
+    font-size: 28px;
+    font-weight: bolder;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+}
+#emi_pay a,#emi_pay a:visited,#emi_pay a:link,#emi_pay a:hover,#emi_pay a:focus{
+    text-decoration: none;
+    color: whitesmoke;
+}
+#emi_pay:hover{
+    background-color:darkorange;
+    color: whitesmoke;
+    cursor: pointer;
+}
+#emi_pay:hover{
+    background-color: #0e0e92;
+    color: whitesmoke;
+    cursor: pointer;
+}
+#emi_progress{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #0e0e92;
+}
+hr{
+    width: 90%;
+    position: relative;
+    top: -15px;
+    left: -85px;
+    color: red;
+    font-weight: bolder;
 }
 .tooltip {
     position: relative;
@@ -339,9 +486,9 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
     position:absolute;
     bottom: 105%;
     right:50%;
-    color:red;
+    color: #0e0e92;
     transform: translateX(50%);
-    font-size: 28px;
+    font-size: 35px;
     animation: bounce 2s forwards;
 }
 .stars{
@@ -378,8 +525,16 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
 }
 .due-date{
     position: absolute;
-    bottom: 30px;
-    left:10px;
+    bottom: -30px;
+    left:20px;
+    /*background-color: #0e0e92;*/
+    color: #0e0e92;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 19px;
+    font-weight: bolder;
 }
 .fa-star{
     color:white;
@@ -411,9 +566,17 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
 }
 #x_money_div{
     float: right;
-    right:200px;
+    right:230px;
+    top:-40px;
     position: relative;
     width: max-content;
+    background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
+    color:yellow;
+    text-shadow: 2px 1px #0e0e92;
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 9px;
+    border-radius: 10px;
 }
 .emi_tracker::-webkit-scrollbar{
     height: 5px;
@@ -424,4 +587,3 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
 .emi_tracker::-webkit-scrollbar-track{
     background: none;
 }
-

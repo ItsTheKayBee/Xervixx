@@ -10,6 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <html lang="en">
 <head>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" type="text/css" href="feed-style.css">
     <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>LOGIN</title>
 </head>
@@ -19,6 +20,9 @@ if (session_status() == PHP_SESSION_NONE) {
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <body>
+<div id="top_navbar_container">
+    <img src="xervizz_logo.png" id="logo">
+</div>
 <form class="login-form" name="myForm" id="login-form" method="post" action="login_check.php">
     <h1>LOGIN</h1>
     <div>
@@ -29,7 +33,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <input type="password" name="Password" pattern="[A-Za-z0-9]{3,}" placeholder="Password" id="pid" required>
         </div><br>
         <input type="submit" name="submit" value="LOGIN">
-        <a onclick="verification()" href="#">FORGOT PASSWORD?</a>
+        <a onclick="verification()" href="#" id="forgot_pwd">FORGOT PASSWORD?</a>
     </div>
 </form>
 <form id="pwdc-form" class="login-form" name="myForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -80,7 +84,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 swal({
                     title: "Logged in successfully!",
                     icon: "success",
-                    button:"Ok"
+                    button:"OK"
                 })
                     .then((Ok) => {
                         if (Ok) {
@@ -88,8 +92,8 @@ if (session_status() == PHP_SESSION_NONE) {
                         }
                     });
                 </script>';
-            } else {
-                echo '<script>
+        } else {
+            echo '<script>
                 swal({
                     title: "Incorrect Phone number",
                     text: "Please re-enter",
@@ -102,9 +106,9 @@ if (session_status() == PHP_SESSION_NONE) {
                         }
                     });
                 </script>';
-            }
-        } else {
-            echo '<script>
+        }
+    } else {
+        echo '<script>
             swal({
                 title: "Incorrect OTP",
                 text: "Please re-enter OTP",
@@ -117,6 +121,6 @@ if (session_status() == PHP_SESSION_NONE) {
                     }
                 });
         </script>';
-        }
     }
+}
 ?>

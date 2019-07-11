@@ -1,3 +1,6 @@
+body{
+    background-color: #ecf0f1;
+}
 p{
     text-align: center;
     color:white;
@@ -9,19 +12,24 @@ p{
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Lucida Bright;
 }
 .login-form{
-    display:block;
-    width:330px;
-    padding:40px;
+    display: block;
+    width: 390px;
+    padding: 30px 40px 30px 40px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: #191919;
     text-align: center;
-    color:white;
+    color: white;
+    font-family: Lucida Bright;
+}
+::placeholder{
+    font-family: Lucida Bright;
+    letter-spacing: 1px;
 }
 div{
     position: relative;
@@ -30,19 +38,33 @@ div{
 .login-form h1{
     float:left;
     font-size: 38px;
-    border-bottom: 5px solid #3498db;
+    border-bottom: 5px solid #2980b9;
     margin-top: 15px;
     margin-bottom: 40px;
     padding:6px 0;
     cursor: default;
-}
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
+    letter-spacing: 1px;
 }
 #pwdc-form{
     display: none;
+}
+#pwdc-form input[type="submit"]{
+    width: 100%;
+    background:none;
+    border: 2px solid #2980b9;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    cursor:pointer;
+    margin: 12px 0 0px 0;
+    height: 40px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+#pwdc-form input[type="submit"]:hover{
+    background-color: #2980b9;
+    border:none;
 }
 .styles{
     width: 100%;
@@ -50,7 +72,7 @@ a{
     font-size: 20px;
     padding: 10px 0;
     margin:12px 0;
-    border-bottom: 1px solid #3498db;
+    border-bottom: 2px solid #2980b9;
 }
 .login-form input{
     border:none;
@@ -61,18 +83,35 @@ a{
     width:80%;
     float: left;
     margin:0 10px;
+    font-family: Lucida Bright;
+    letter-spacing: 2px;
 }
 .login-form input[type="submit"]{
     width: 100%;
     background:none;
-    border: 2px solid #3498db;
+    border: 3px solid #2980b9;
     color: white;
     padding: 5px;
-    font-size: 18px;
+    font-size: 20px;
     cursor:pointer;
-    margin: 12px 0;
-    height: 45px;
+    margin: 12px 0 50px 0;
+    height: 40px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: bolder;
 }
 .login-form input[type="submit"]:hover{
-    background-color: #2486A4;
+    background-color: #2980b9;
+    border:none;
+}
+#forgot_pwd{
+    font-size: 13px;
+    border-bottom: 2px solid #2980b9;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+#forgot_pwd:hover{
+    border: 2px solid #2980b9;
 }

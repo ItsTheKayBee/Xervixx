@@ -27,9 +27,9 @@ $path_result=$con->query($image_path_retrieval_query);
             $like_result=$con->query($like_sql);
             $user_like=$like_result->num_rows;
             if($user_like){
-                $color='gold';
+                $color='#0e0e92';
             }else{
-                $color='lightgrey';
+                $color='dimgrey';
             }
             if($comment_count==0){
                 $comment_count='No comments';
@@ -40,10 +40,10 @@ $path_result=$con->query($image_path_retrieval_query);
             }
             echo "<div class='column ".$tag."'>";
             echo "<div class='content'>";
-            echo "<img src='".$image."' style='width:100%'>";
-            echo "<div class='post-info-container'>".$likes."&nbsp;<i onclick='addLike(this,".$post_id.")' style='color:".$color.";' class='fas fa-smile'></i>&nbsp;&nbsp;";
-            echo "</div>";
             echo "<h4 class='title'>".$title."</h4>";
+            echo "<img src='".$image."' style='width:100%'>";
+            echo "<div class='post-info-container' style='font-weight: bolder;'>".$likes." <i onclick='addLike(this,".$post_id.")'style='color:".$color.";'class='fas fa-smile'></i>&nbsp;&nbsp;";
+            echo "</div>";
             echo "<p class='caption'>".$caption."</p>";
             echo "<span class='view-comments' onclick='openComments(".$post_id.")'>".$comment_count."</span><div class='top-comments'>";
             if($comment_res->num_rows>0){
@@ -55,7 +55,7 @@ $path_result=$con->query($image_path_retrieval_query);
             }
             echo "<b>".$username." </b>";
             echo "<span>".$top_comments."</span><br>";
-            echo "</div><input type='text' class='comment-inp' placeholder='type a comment...'>";
+            echo "</div><input type='text' class='comment-inp' placeholder='Type a comment...'>";
             echo "<i class='fas fa-arrow-circle-right' onclick='sendComment(this,".$post_id.")'></i>";
             echo "</div></div>";
         }
