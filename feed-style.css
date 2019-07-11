@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: lato,"Lucida Bright",sans-serif;
 }
 body {
     background-color: #ecf0f1;
     padding: 0;
-    font-family: "Lucida Bright";
 }
 .main {
     max-width: 1000px;
@@ -170,7 +170,7 @@ h1 {
     padding: 5px;
     color: white;
     border: 2px solid #1b32a5;
-    font-family: "Lucida Bright";
+    font-family: "Lato", "Lucida Bright",sans-serif;
     font-weight: bolder;
     font-size: 18px;
     cursor: pointer;
@@ -180,11 +180,6 @@ h1 {
     border: 2px solid #0e0e92;
     color: #0e0e92;
 }
-/*#lower-menu{
-    position: relative;
-    width: 220px;
-    margin-bottom: 50px;
-}*/
 #feed-container-icon{
     display: none;
     position: fixed;
@@ -611,4 +606,28 @@ span,div,p{
         transform: scaleX(1) scaleY(1);
     }
 }
-
+#logo{
+    width: 220px;
+    height: 60px;
+    z-index: 50;
+    margin: 0 10px;
+}
+.profile-dp{
+    border-radius: 50%;
+    float: right;
+    width: 50px;
+    z-index: 30;
+}
+.profile-div{
+    color: white;
+    z-index: 30;
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 5px 10px;
+    font-size: 28px;
+}
+.profile-div span{
+    margin: 0 10px 0 0;
+    line-height: 50px;
+}

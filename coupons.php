@@ -4,7 +4,7 @@ include 'db_connect.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Buy</title>
+    <title>Coupons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="coupons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,7 +16,8 @@ include 'db_connect.php';
 </head>
     <body>
     <div id="top_navbar_container">
-        <img src="xervizz_logo.png" id="logo">
+        <img src="xervixx-logo.png" alt="logo" id="logo">
+        <a href="user_profile.php"><?php include "display_pic.php";?></a>
     </div>
     <div id="tabLayout">
         <a class="btn btn_home" href="home.php" style="border-left: 10px solid #d35400"><i class="fa fa-home"></i>&nbsp;Home</a>

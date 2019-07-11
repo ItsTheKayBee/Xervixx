@@ -21,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <body>
 <div id="top_navbar_container">
-    <img src="xervizz_logo.png" id="logo">
+    <img src="xervixx-logo.png" alt="logo" id="logo">
 </div>
 <form class="login-form" name="myForm" id="login-form" method="post" action="login_check.php">
     <h1>LOGIN</h1>

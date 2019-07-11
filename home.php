@@ -17,7 +17,8 @@ include 'db_connect.php';
     <body style="overflow-x: hidden">
         <div id="main_div">
             <div id="top_navbar_container">
-                <img src="xervizz_logo.png" id="logo">
+                <img src="xervixx-logo.png" alt="logo" id="logo">
+                <a href="user_profile.php"><?php include "display_pic.php";?></a>
             </div>
             <div id="tabLayout">
                 <a class="btn btn_home active" href="home.php" style="border-left: 10px solid #d35400"><i class="fa fa-home"></i>&nbsp;Home</a>
@@ -60,16 +61,6 @@ include 'db_connect.php';
                     <i>x-MONEY :</i>
                     <?php include 'x_money_credit.php';?> <i style="color:yellow" class="fas fa-coins"></i>
                 </span><br><br><br>
-                <div class="steps">
-                    <p id="tag_emi"><i>WANT TO INCREASE YOUR CREDIT SCORE ?</i></p>
-                    <div id="steps_container">
-                        <div class="steps_div"><p class="steps_content">1. PAY YOUR EMI BEFORE 7 DAYS</p></div>
-                        <div class="steps_div"><p class="steps_content">2. INCREASE YOUR CREDIT SCORE & GET x-MONEY</p></div>
-                        <div class="steps_div"><p class="steps_content">3. USE x-MONEY TO AVAIL EXCITING DISCOUNTS</p></div>
-                    </div>
-                    <p id="emi_pay"><a href="#emi_progress" style="text-decoration: none;"><i>PAY NOW</i></a></p>
-                </div>
-                <p id="emi_progress">EMI PROGRESS</p><hr>
                 <?php include 'loan_updation.php';?>
             </div>
             <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">

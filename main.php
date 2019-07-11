@@ -9,6 +9,7 @@
 <style>
     body {font-family: "Lato", sans-serif}
     .mySlides {display: none}
+    p{cursor: default}
 </style>
 <body>
 <div class="w3-top">
@@ -17,6 +18,7 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="#loan" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOAN</a>
         <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large w3-hide-small">STOCK CRICKET</a>
+        <a href="#emi" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EMI</a>
         <a href="#feed" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FEED</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
@@ -26,12 +28,13 @@
 <div id="mobile-navbar" class=  "w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
     <a href="#loan" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOAN</a>
     <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">STOCK CRICKET</a>
+    <a href="#emi" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EMI</a>
     <a href="#feed" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FEED</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
     <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
     <a href="register.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">REGISTER</a>
 </div>
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content w3-black" style="max-width:2000px;margin-top:46px">
     <div class="mySlides w3-display-container w3-center">
         <img src="" style="width:100%">
         <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
@@ -54,24 +57,24 @@
         </div>
     </div>
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-        <h2 class="w3-wide">XERVIXX</h2>
-        <p class="w3-opacity"><i>We love to see your dreams come true</i></p>
+        <img class="w3-center" alt="xervixx-logo" src='xervixx-logo.png' style="z-index:30;width: 400px;height: 120px">
+        <p class="w3-opacity"><i>WE LOVE TO SEE YOUR DREAMS COME TRUE</i></p>
         <p class="w3-justify"></p>
         <div class="w3-row-padding w3-padding-32">
             <div class="w3-quarter w3-col w3-card-4 w3-black w3-hover">
-                <p>Protecting</p>
+                <p CLASS="w3-wide">PROTECTING</p>
                 <img src="" class="w3-round w3-margin-bottom" alt="" style="width:60%">
             </div>
             <div class="w3-quarter w3-col w3-card-4 w3-black">
-                <p>Investing</p>
+                <p class="w3-wide">INVESTING</p>
                 <img src="" class="w3-round w3-margin-bottom" alt="" style="width:60%">
             </div>
             <div class="w3-quarter w3-col w3-card-4 w3-black">
-                <p>Financing</p>
+                <p class="w3-wide">FINANCING</p>
                 <img src="" class="w3-round" alt="" style="width:60%">
             </div>
             <div class="w3-quarter w3-col w3-card-4 w3-black">
-                <p>Advising</p>
+                <p class="w3-wide">ADVISING</p>
                 <img src="" class="w3-round" alt="" style="width:60%">
             </div>
         </div>
@@ -93,8 +96,7 @@
     <div id="ticketModal" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-teal w3-center w3-padding-32">
-        <span onclick="document.getElementById('ticketModal').style.display='none'"
-              class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <span onclick="document.getElementById('ticketModal').style.display='none'" class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
                 <h2 class="w3-wide">Loan</h2>
             </header>
             <div class="w3-container">
@@ -114,34 +116,52 @@
         <div class="w3-row w3-center w3-padding-32">
             <div class="w3-col w3-third">
                 <img src="cricket.png"  width="120px">
-                <p>Select a format of cricket (T20, ODI, TEST)</p>
+                <p>SELECT A FORMAT OF CRICKET (T20, ODI, TEST)</p>
             </div>
             <div class="w3-col w3-third">
                 <img src="bar.png" width="120px">
-                <p>Make your best team with companies as your players</p>
+                <p>MAKE THE BEST SHARE MARKET TEAM</p>
             </div>
             <div class="w3-col w3-third">
                 <img src="rupee.png" width="120px">
-                <p>Earn exciting rewards</p>
+                <p>EARN EXCITING REWARDS!</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="emi">
+        <h2 class="w3-wide w3-center">EASY MONTHLY INSTALLMENTS- THE GAME</h2>
+        <p class="w3-opacity w3-center"><i>GOTTA WIN EVERY LEVEL!</i></p>
+        <div class="w3-row w3-center w3-padding-32">
+            <div class="w3-col w3-third">
+                <img src="rate.png"  width="120px">
+                <p> PAY ALL EMIs ON TIME TO GET STARS</p>
+            </div>
+            <div class="w3-col w3-third">
+                <img src="success.png" width="120px">
+                <p>REACH AT THE TOP OF THE LEADERBOARD</p>
+            </div>
+            <div class="w3-col w3-third">
+                <img src="money.png" width="120px">
+                <p>GET CASHBACK ON YOUR LOAN</p>
             </div>
         </div>
     </div>
     <div class="w3-black" id="feed">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
             <h2 class="w3-wide w3-center">THE FEED</h2>
-            <p class="w3-opacity w3-center"><i>Personalized and uniquely designed feed for engaging even the non-interested</i></p><br>
+            <p class="w3-opacity w3-center"><i>PERSONALIZED AND UNIQUELY DESIGNED FEED FOR ENGAGING EVEN THE NON-INTERESTED!</i></p><br>
             <div class="w3-row w3-center w3-padding-32">
                 <div class="w3-col w3-third">
                     <img src="blog.png" width="120px">
-                    <p>Read interesting and informative posts on what is going on around in the finance industry</p>
+                    <p>READ INTERESTING AND INFORMATIVE POSTS ON WHAT IS GOING ON AROUND IN THE FINANCE INDUSTRY</p>
                 </div>
                 <div class="w3-col w3-third">
                     <img src="group.png" width="120px">
-                    <p>Network with people from across the country</p>
+                    <p>NETWORK WITH PEOPLE FROM ACROSS THE COUNTRY</p>
                 </div>
                 <div class="w3-col w3-third">
                     <img src="recommendation.png" width="120px">
-                    <p>Standout from others by competing globally and avail exciting offers</p>
+                    <p>STANDOUT FROM OTHERS BY COMPETING GLOBALLY AND AVAIL EXCITING OFFERS!</p>
                 </div>
             </div>
         </div>
@@ -156,7 +176,7 @@
                 <i class="fa fa-envelope" style="width:30px"> </i> Email: support@xervixx.com<br>
             </div>
             <div class="w3-col m6">
-                <form action="/action_page.php" target="_blank">
+                <form target="_blank">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -177,7 +197,7 @@
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Xervixx.com</p>
+    <p class="w3-medium">xervixx.com</p>
 </footer>
 
 <script>

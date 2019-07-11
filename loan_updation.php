@@ -4,6 +4,16 @@
     $user_query="select * from user where user_id=".$user_id;
     $user_res=$con->query($user_query);
     if($loan_taken==1){
+        echo '<div class="steps">
+                    <p id="tag_emi"><i>WANT TO INCREASE YOUR CREDIT SCORE ?</i></p>
+                    <div id="steps_container">
+                        <div class="steps_div"><p class="steps_content">1. PAY YOUR EMI BEFORE 7 DAYS</p></div>
+                        <div class="steps_div"><p class="steps_content">2. INCREASE YOUR CREDIT SCORE & GET x-MONEY</p></div>
+                        <div class="steps_div"><p class="steps_content">3. USE x-MONEY TO AVAIL EXCITING DISCOUNTS</p></div>
+                    </div>
+                    <p id="emi_pay"><a href="#emi_progress" style="text-decoration: none;"><i>PAY NOW</i></a></p>
+                </div>
+                <p id="emi_progress">EMI PROGRESS</p><hr>';
         if($res=$user_res->fetch_assoc()){
             $loan_query="select * from loan where user_id=".$user_id;
             $loan_res=$con->query($loan_query);

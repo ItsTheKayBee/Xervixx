@@ -14,6 +14,7 @@ include 'db_connect.php';
 <link rel="stylesheet" href="stock-cricket.css">
 <body>
 <i class="fas fa-info-circle" onclick="tnc()"></i>
+<button class="fas fa-caret-left" onclick="location.replace('home.php')">&nbsp;&nbsp;HOME</button>
 <div class="container">
     <ul class="progress-bar">
         <li class=" active uncheckedli fas fa-check-circle">Select a Tournament</li>

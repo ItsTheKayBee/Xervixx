@@ -2,7 +2,7 @@ body{
     background-color: #ecf0f1;
 }
 .steps{
-    width: 80%;
+    width: 78%;
     height: 80%;
     background-color: #0e0e92;
     opacity: 0.9;
@@ -12,7 +12,7 @@ body{
     height: 100px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     position: relative;
-    width: 650px;
+    width: 64%;
     left: 380px;
     margin-bottom: 20px;
     margin-top: -2px;
@@ -23,7 +23,7 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    top: 0px;
+    top: 0;
     right: 290px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     -webkit-transform: skewX(45deg);
@@ -38,7 +38,7 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    top: 0px;
+    top: 0;
     right: 290px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     -webkit-transform: skewX(-45deg);
@@ -243,11 +243,9 @@ body::-webkit-scrollbar-track{
     margin-bottom: 40px;
     overflow-x: auto;
     overflow-y: hidden;
-    /*background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);*/
     cursor:pointer;
     border-radius:20px ;
     box-shadow: -1px -1px 5px 1px grey;
-    /*background-color: whitesmoke;*/
 }
 .progressbar{
     counter-reset: step;
@@ -412,14 +410,13 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
     margin-top: -30px;
     color: whitesmoke;
     margin-left: 40px;
-    /*border: 5px solid #0e0e92;*/
     padding: 20px;
     width: 90%;
     text-align: center;
 }
 #emi_pay{
-    border: 3px solid #0e0e92;
-    padding: 10px;
+    /*border: 3px solid #0e0e92;*/
+    /*padding: 10px;*/
     position: relative;
     width: 35%;
     left: 310px;

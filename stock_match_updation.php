@@ -169,7 +169,7 @@ if ($match_result->num_rows > 0) {
                     echo '<div class="' . $matchFormatSession[0] . '-img"></div>';
                     echo '<span class="live">LIVE</span>';
                     echo '<span class="results-time">' . ($hours) . ' left</span>';
-                    echo '<span class="btn">PLAYING</span></div>';
+                    echo '<span class="playing">PLAYING</span></div>';
                 } else {
                     $match_date = date_format($match_date, 'd-m-Y');
                     echo '<div class="match">';

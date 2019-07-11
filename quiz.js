@@ -119,6 +119,7 @@ function answerIsCorrect(){
         title: "Right Answer",
         icon: "success",
         button:false,
+        timer:800,
     })
 }
 function answerIsWrong(){
@@ -127,6 +128,7 @@ function answerIsWrong(){
         title: "Sorry, your answer is incorrect",
         icon: "error",
         button:false,
+        timer:800,
     })
 }
 var scoreRendering= function scoreRender(){

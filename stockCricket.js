@@ -62,6 +62,7 @@ function matchSelect(match) {
     sort('Name');
     progressIncrement();
     $(document.body).css('overflow','hidden');
+    window.scrollTo(0,0);
 }
 function progressIncrement() {
     $('li.active').next().addClass('active');
@@ -343,7 +344,8 @@ function showLB(matchID) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            document.getElementById("leaderboard").innerHTML = this.responseText;
+            $('#leaderboard').html(this.responseText);
+            $('#ranking').html(this.responseText);
             $('.leaderboard').show();
         }
     };

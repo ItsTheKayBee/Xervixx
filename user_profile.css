@@ -1,0 +1,139 @@
+#ranking tr:nth-child(even){
+    background-color: #d7514d;
+}
+#ranking tr:nth-child(odd){
+    background-color: #e79a97;
+}
+#ranking tr:nth-child(1){
+    background-color: black;
+    color:white;
+}
+#ranking tr:nth-child(2){
+    background-color: gold;
+}
+#ranking tr:nth-child(3){
+    background-color: silver;
+}
+#ranking tr:nth-child(4){
+    background-color: #CD7F32;
+}
+#ranking td{
+    padding: 5px;
+    border: solid 1px black;
+    margin: 0;
+}
+#ranking{
+    width: 95%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    border-collapse:collapse;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+#ranking tr:hover {
+    z-index: 2;
+    transform: scaleX(1.03) scaleY(1.15);
+    overflow-x: hidden;
+}
+#ranking tr:hover::after {
+    opacity: 1;
+    -webkit-transform: scaleX(1.06) scaleY(1.03);
+    transform: scaleX(1.03) scaleY(1.15);
+}
+.profile-pic{
+    border-radius: 50%;
+    width: 200px;
+}
+.profile{
+    padding:0 20px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-image: linear-gradient(to bottom,#40E0D0,#4682B4);
+}
+.user-div{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 120px 0;
+}
+.rank{
+    text-align: center;
+    font-size: 200px;
+}
+.matches-played{
+    font-size: 30px;
+    line-height: 50px;
+    background-image: url("stadium.jpg");
+    color: white;
+    background-size: cover;
+}
+.col {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 10px 0 10px;
+    flex: 25%;
+    text-align: center;
+    background-color: white;
+}
+.col:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+body{
+    font-family: "Lucida Bright","Lato",sans-serif;
+    overflow-x: hidden;
+}
+.fa-caret-left{
+    position: absolute;
+    border: none;
+    transition: 0.3s;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    top: 80px;
+    background-color: white;
+    left: 20px;
+}
+.fa-caret-left:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.match-container{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.match{
+    padding:0 10px 10px 10px;
+    flex: 33.33%;
+    min-width: 33.33%;
+    max-width: 33.33%;
+    margin: 0;
+    background-color: #ecf0f1;
+    float: left;
+}
+.format{
+    background-color: #cc0000;
+    position: relative;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+    left: 88%;
+    top: 30px;
+}
+.btn{
+    left:40%;
+}
+.playing{
+    left: 15%;
+    float: left;
+}
+.results-time{
+    float: left;
+}
+.global-rank{
+    background-image: url("ranking.jpg");
+    background-size: cover;
+    color: white;
+}

@@ -4,6 +4,7 @@ include 'db_connect.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <title>Contact</title>
     <link rel="stylesheet" type="text/css" href="contact_us.css">
     <link rel="stylesheet" href="feed-style.css">
@@ -37,6 +38,7 @@ include 'db_connect.php';
                 <span style="float: left"><i class="fa fa-envelope" style="width:30px"> </i> Email: support@xervixx.com</span><br>
             </footer>
         </form>
+        <button class="fas fa-caret-left" onclick="location.replace('home.php')">&nbsp;&nbsp;HOME</button>
     </div>
 </body>
 <script>

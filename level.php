@@ -6,6 +6,9 @@ if($row=$level_res->fetch_assoc()){
         $xp=$row['xp'];
         $level=(int)($xp/100);
         $level_extra=(($xp/100)-(int)($xp/100))*100;
+        if($level_extra==0){
+            $level_extra=1;
+        }
         $angle_level=360*$level_extra/100;
         if($angle_level>180){
             $left=$angle_level-180;
