@@ -38,17 +38,16 @@ include 'db_connect.php';
             </dl>
         </div>
         <button onclick="showOLB()" class="olb_btn">VIEW GLOBAL LEADERBOARD</button>
-        <div class="leaderboard">
-            <h1>&nbsp;&nbsp;
-                <i class="fa fa-trophy" style="color: gold;font-size: 32px;"></i>
-                &nbsp;GLOBAL RANKING
-                <i class="fa fa-times-circle" onclick="closeLB()" style="float: right;padding-right: 15px"></i>
-            </h1>
-            <table id="ranking">
-            </table>
-        </div>
     </div>
 </nav>
+<div class="leaderboard">
+    <p>&nbsp;
+        <i class="fa fa-trophy" style="color: gold;font-size:32px;"></i>&nbsp;GLOBAL RANKING
+        <i class="fa fa-times-circle" onclick="closeLB()" style="float: right;padding-right: 15px; font-size:30px;"></i>
+    </p>
+    <table id="ranking">
+    </table>
+</div>
 <button class="fas fa-caret-left" onclick="location.replace('home.php')">&nbsp;&nbsp;HOME</button>
 <div class="user-div">
     <?php include 'user_info.php'?>
@@ -60,15 +59,6 @@ include 'db_connect.php';
             <?php include 'previous_matches.php';?>
         </div>
     </div>
-</div>
-<div class="leaderboard">
-    <h1>&nbsp;&nbsp;
-        <i class="fa fa-trophy" style="color: gold;font-size: 32px;"></i>
-        &nbsp;Top Performers
-        <i class="fa fa-times-circle" onclick="closeLB()" style="float: right;padding-right: 15px"></i>
-    </h1>
-    <table id="ranking">
-    </table>
 </div>
 </body>
 <footer>

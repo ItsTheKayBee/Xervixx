@@ -347,7 +347,7 @@ function showLB(matchID) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            $('#leaderboard').html(this.responseText);
+            // $('#leaderboard').html(this.responseText);
             $('#ranking').html(this.responseText);
             $('.leaderboard').show();
         }
