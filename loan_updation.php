@@ -1,3 +1,6 @@
+<style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</style>
 <?php
     include 'db_connect.php';
     $loan_taken=$_SESSION['loan_taken'];
@@ -14,6 +17,24 @@
                     <p id="emi_pay"><a href="#emi_progress" style="text-decoration: none;"><i>PAY NOW</i></a></p>
                 </div>
                 <p id="emi_progress">EMI PROGRESS</p><hr>';
+/*        echo '<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="emi">
+        <h2 class="w3-wide w3-center">EASY MONTHLY INSTALLMENTS- THE GAME</h2>
+        <p class="w3-opacity w3-center"><i>GOTTA WIN EVERY LEVEL!</i></p>
+        <div class="w3-row w3-center w3-padding-32">
+            <div class="w3-col w3-third">
+                <img src="rate.png"  width="120px">
+                <p> PAY ALL EMIs ON TIME TO GET STARS</p>
+            </div>
+            <div class="w3-col w3-third">
+                <img src="success.png" width="120px">
+                <p>REACH AT THE TOP OF THE LEADERBOARD</p>
+            </div>
+            <div class="w3-col w3-third">
+                <img src="money.png" width="120px">
+                <p>GET CASHBACK ON YOUR LOAN</p>
+            </div>
+        </div>
+    </div>';*/
         if($res=$user_res->fetch_assoc()){
             $loan_query="select * from loan where user_id=".$user_id;
             $loan_res=$con->query($loan_query);

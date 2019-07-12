@@ -4,18 +4,18 @@ body{
 .steps{
     width: 90%;
     height: 80%;
-    background-color: #0e0e92;
+    background-color: #5b5bbb;
     opacity: 0.9;
     position: relative;
     left: -35px;
     top: -89px;
 }
 .steps_div{
-    height: 100px;
+    height: 70px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     position: relative;
-    width: 64%;
-    left: 360px;
+    width: 50%;
+    left: 420px;
     margin-bottom: 20px;
     margin-top: -2px;
     border-radius: 80px;
@@ -26,7 +26,7 @@ body{
     width: 100%;
     height: 100%;
     top: 0;
-    right: 290px;
+    right: 270px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     -webkit-transform: skewX(45deg);
     -moz-transform: skewX(45deg);
@@ -41,7 +41,7 @@ body{
     width: 100%;
     height: 100%;
     top: 0;
-    right: 290px;
+    right: 270px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     -webkit-transform: skewX(-45deg);
     -moz-transform: skewX(-45deg);
@@ -54,12 +54,12 @@ body{
     margin-top: -20px;
 }
 .steps_content{
-    font-size: 28px;
+    font-size: 25px;
     color: white;
     text-align: center;
     position: relative;
     left: -250px;
-    top: 20px;
+    top: 7px;
     font-weight: bold;
 }
 .progress{
@@ -581,7 +581,6 @@ hr{
 .emi_tracker::-webkit-scrollbar-track{
     background: none;
 }
-/*
 .column {
     float: left;
     width: 25%;
@@ -608,4 +607,4 @@ hr{
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
-}*/
+}

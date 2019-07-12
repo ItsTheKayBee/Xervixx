@@ -75,7 +75,7 @@ include 'db_connect.php';
                     <?php include 'credit_score.php';?>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <span class="time_match_completed" style="transform:translateX(-50%);margin-bottom:10px;position: absolute;top:500px;left: 50%; ">YOU COULD ALSO CHECK </span><hr style="top:5px;position: relative">
                 <div class="column">
                     <div class="cs_card">
@@ -118,7 +118,7 @@ include 'db_connect.php';
                         <p>Some text</p>
                     </div>
                 </div>
-            </div>
+            </div>-->
     </body>
 <footer>
     <script src="homeScript.js"></script>
