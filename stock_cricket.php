@@ -20,7 +20,7 @@ include 'db_connect.php';
         <li class=" active uncheckedli fas fa-check-circle">Select a Tournament</li>
         <li class=" uncheckedli fas fa-check-circle">Create a Team</li>
         <li class="uncheckedli fas fa-check-circle">Pay Pool x-money</li>
-        <li class="uncheckedli fas fa-check-circle" style="display: none">Pay Pool x-money</li>
+        <li class="uncheckedli fas fa-check-circle" style="display: none">Pay Pool fincoins</li>
     </ul>
     <div id="track"></div>
 </div>

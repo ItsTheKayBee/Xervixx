@@ -201,7 +201,7 @@ function capSelected(x) {
             if(cap!==null){
                 swal({
                     title: "Do you wish to confirm your team and pay pool ?",
-                    text: pool+" x-money will be deducted from your x-wallet",
+                    text: pool+" Fincoins will be deducted from your fincoin balance.",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
