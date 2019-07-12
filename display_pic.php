@@ -10,5 +10,5 @@ if($row=$user_res->fetch_assoc()){
     }
 }
 echo '<div class="profile-div"><img alt="display" src="'.$prof.'.png" class="profile-dp">
-        @<span>'.$username.'</span><br>
+        <span>'.$username.'</span><br>
     </div>';

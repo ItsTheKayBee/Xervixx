@@ -563,14 +563,14 @@ hr{
 #x_money_div{
     float: right;
     right:500px;
-    top:0px;
+    top:0;
     position: fixed;
     color:yellow;
     text-shadow: 2px 1px #0e0e92;
     font-weight: bolder;
     font-size: 45px;
     padding: 9px;
-    z-index: 1;
+    z-index: 11;
 }
 .emi_tracker::-webkit-scrollbar{
     height: 5px;
@@ -581,6 +581,7 @@ hr{
 .emi_tracker::-webkit-scrollbar-track{
     background: none;
 }
+/*
 .column {
     float: left;
     width: 25%;
@@ -607,4 +608,4 @@ hr{
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
-}
+}*/

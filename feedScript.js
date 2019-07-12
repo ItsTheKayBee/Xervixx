@@ -82,8 +82,6 @@ function scoreLayout(x){
         xmoney.style.display="block";
         if(window.innerWidth<750){
             document.getElementById("tabLayout").style.display="none";
-            var contact=document.getElementById('contact');
-            contact.style.display="none";
         }
     }else{
         x.parentElement.setAttribute("id","closeScoreLayout");
@@ -91,18 +89,8 @@ function scoreLayout(x){
         document.getElementById("container-div").style.display="none";
         document.getElementById("x-money-div").style.display="none";
         document.getElementById('tabLayout').style.display="block";
-        if(window.innerWidth<750)
-            document.getElementById('contact').style.display="block";
     }
 }
-$(window).on('resize', function(){
-    if ($(window).width()>750){
-        $("#contact").hide();
-    }
-    else{
-        $("#contact").show();
-    }
-});
 $(window).on('resize load', function() {
     if (window.innerWidth < 750) {
         $(".feed-feed").click(
@@ -137,30 +125,6 @@ $(window).on('resize load', function() {
             $('#feed-container-icon').hide();
         });
     }
-});
-$(document).ready(function () {
-    $('#contact').click(function () {
-        $('#lower-menu-dropdown').show();
-    });
-    $(document).scroll(function () {
-        $('#lower-menu-dropdown').hide();
-    });
-    $("#contact").hover(
-        function (e) {
-            $("#lower-menu-dropdown").show();
-        },
-        function (e) {
-            $("#lower-menu-dropdown").hover(
-                function (e) {
-                    $("#lower-menu-dropdown").show();
-                },
-                function (e) {
-                    $("#lower-menu-dropdown").hide();
-                }
-            );
-            $("#lower-menu-dropdown").hide();
-        }
-    );
 });
 function logout() {
     swal({
