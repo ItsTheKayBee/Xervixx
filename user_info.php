@@ -42,7 +42,7 @@ echo '<div class="global-rank col">
     <div class="matches-played col">
         <b>Matches Played: </b><span>'.$matches_played.'</span><br>
         <b>Quizzes Attempted: </b><span>'.$quiz_attempted.'</span><br>
-        <b>X-money Won: </b><span>'.$x_money.'</span><br>
+        <b>Fincoins Won: </b><span>'.$x_money.'</span><br>
         <b>XP: </b><span>'.$xp.'</span><br>
         <b>Level: </b><span>'.$level.'</span><br>
     </div>';

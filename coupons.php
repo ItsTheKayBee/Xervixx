@@ -14,7 +14,7 @@ include 'db_connect.php';
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-    <body>
+    <body style="background-color: #f8f8ff;">
     <div id="top_navbar_container">
         <img src="xervixx-logo.png" alt="logo" id="logo">
         <a href="user_profile.php"><?php include "display_pic.php";?></a>
@@ -55,11 +55,11 @@ include 'db_connect.php';
     </div>
     <div id="buy-container">
         <p align="center" id="my_coupons_text">MY COUPONS</p>
-        <div class="row" style="width:90%;">
+        <div class="row" style="width:90%;padding:20px;">
             <?php include 'coupons_purchased.php';?>
         </div>
         <p align="center" id="purchase_coupons_text">PURCHASE COUPONS</p>
-        <div class="row" style="width:90%;">
+        <div class="row" style="width:90%;padding:20px;">
             <?php include 'all_coupons.php';?>
         </div>
     </div>

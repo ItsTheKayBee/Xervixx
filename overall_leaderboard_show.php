@@ -8,7 +8,7 @@ if($lb_results->num_rows>0){
                     <th>Rank</th>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>x-money won</th>
+                    <th>Fincoins won</th>
                     <th>xp</th>
                     <th>level</th>
                 </tr>";

@@ -85,11 +85,11 @@
                                 }
                                 else if($due_diff<0){
                                     if($due_diff<=-7){
-                                        $date_diff_text='Pay 7 days before to get 30 x-money';
+                                        $date_diff_text='Pay 7 days before to get 30 fincoins';
                                     }else if($due_diff>-7 && $due_diff<=-3){
-                                        $date_diff_text='Pay 3 days before to get 20 x-money';
+                                        $date_diff_text='Pay 3 days before to get 20 fincoins';
                                     }else if($due_diff>-3 && $due_diff<=-1){
-                                        $date_diff_text='Pay 1 day before to get 10 x-money';
+                                        $date_diff_text='Pay 1 day before to get 10 fincoins';
                                     }
                                 }else{
                                     $date_diff_text='Pay today to avoid decrease in credit score';

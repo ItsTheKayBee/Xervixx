@@ -138,7 +138,7 @@ var scoreRendering= function scoreRender(){
             var score=this.responseText;
             swal({
                 title: "Congratulations!!!",
-                text: "You scored "+score+"\n"+(score*10)+" x-money added to your wallet",
+                text: "You scored "+score+"\n"+(score*10)+" fincoins added to your wallet",
                 icon: "success",
                 button: "Okay",
             })

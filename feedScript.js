@@ -228,7 +228,7 @@ function referral() {
             console.log(code);
             Swal.fire({
                 title: "Share and Earn",
-                html:"A friend joins using your referral code and you both earn 100&nbsp;&nbsp; &nbsp;&nbsp; x-money coins<br>"+
+                html:"A friend joins using your referral code and you both earn 100 fincoins.<br>"+
                     "Share your referral code: "+code,
                 button: true,
             })

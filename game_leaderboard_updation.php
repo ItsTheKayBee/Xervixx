@@ -52,7 +52,7 @@
                 $money_user_update="update user set x_money=".$x_money.",xp=".$xp." where user_id=".$user_id;
                 if ($con->query($money_user_update) === true) {
                 } else {
-                    echo "x-money update error";
+                    echo "fincoin update error";
                 }
             }
         }

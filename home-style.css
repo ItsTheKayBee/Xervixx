@@ -495,7 +495,6 @@ hr{
     font-size: 18px;
     animation: bounce 2s forwards;
 }
-
 @-webkit-keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         -webkit-transform: translate(50%,0);
@@ -561,9 +560,13 @@ hr{
     -webkit-text-stroke-width: 1px;
 }
 #x_money_div{
-    float: right;
-    right:500px;
-    top:0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top:0px;
     position: fixed;
     color:yellow;
     text-shadow: 2px 1px #0e0e92;

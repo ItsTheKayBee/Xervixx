@@ -200,7 +200,7 @@ function capSelected(x) {
         $('.act-ive').on('click',function (cap) {
             if(cap!==null){
                 swal({
-                    title: "Do you wish to confirm your team and pay pool x-money?",
+                    title: "Do you wish to confirm your team and pay pool ?",
                     text: pool+" x-money will be deducted from your x-wallet",
                     icon: "warning",
                     buttons: true,
@@ -231,7 +231,7 @@ function capSelected(x) {
                                     else{
                                         swal({
                                             title: "Could not complete registration",
-                                            text:"You dont have sufficient x-money in your wallet",
+                                            text:"You don't have sufficient fincoins in your wallet",
                                             icon: "error",
                                             button:'Earn more',
                                         })
@@ -370,8 +370,8 @@ function tnc() {
         "<br>9. A player, if confused between selecting the companies or lacks time, can choose to automatically select the companies." +
         "<br>10. Once the company list is final, a player will be prompted to select a captain. The role of the captain company is to double its score." +
         "<br>11. The score will be calculated based on the percentage price change of every company in the player's team and a cumulative score will be calculated." +
-        "<br>12. At the end of the tournament, a leaderboard will be declared and x-money would be distributed to the top 50% participants in decreasing fashion from top to bottom of the leaderboard." +
-        "<br>13. x-money received can be used to purchase coupons which can be used to avail attractive offers.";
+        "<br>12. At the end of the tournament, a leaderboard will be declared and fincoins would be distributed to the top 50% participants in decreasing fashion from top to bottom of the leaderboard." +
+        "<br>13. Fincoins received can be used to purchase coupons which can be used to avail attractive offers.";
     Swal.fire({
         title: 'How to play',
         html:htp,

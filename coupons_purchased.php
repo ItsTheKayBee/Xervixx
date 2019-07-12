@@ -19,7 +19,7 @@ if($coupon_res->num_rows>0){
                 </div>';
     }
 }else{
-    echo '<div id="no_coupon">You don\'t have any coupons! <i class="fa fa-frown"></i><br><br> Use x-money balance to buy some from below.</div>';
+    echo '<div id="no_coupon">You don\'t have any coupons! <i class="fa fa-frown"></i><br><br> Use fincoin balance to buy some from below.</div>';
 }
 $con->close();
 

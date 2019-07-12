@@ -6,18 +6,17 @@
 }
 body{
     overflow-x: hidden;
-    background-color: #ecf0f1;
 }
 .coupon{
     min-width: min-content;
     flex: 33%;
-    max-width: 33.33%;
-    margin: 10px 2px 10px 1px;
+    max-width: 33%;
+    margin: 10px 3px 10px 0px;
     border: 3px solid #27ae60;
 }
 .container {
     padding: 2px 16px;
-    background-color: #f8f8ff;;
+    background-color: #f8f8ff;
 }
 #promo {
     background: #94c778;
@@ -75,7 +74,7 @@ body{
     width: 70%;
     display: flex;
     flex-wrap: wrap;
-    padding: 18px;
+    padding: 28px;
     position: relative;
 }
 #my_coupons_text{
@@ -94,8 +93,8 @@ body{
 #coupon_purchase{
     min-width: min-content;
     flex: 33%;
-    max-width: 33.33%;
-    margin: 10px 2px 10px 1px;
+    max-width: 33%;
+    margin: 10px 3px 10px 0px;
     border: 3px solid #2927b3;
 }
 #purchase_coupons_text{
@@ -127,8 +126,24 @@ body{
     .coupon{
         min-width: min-content;
         flex: 50%;
-        max-width: 50%;
-        padding: 10px 0 0 10px;
+        margin-right: 15px;
+        margin-left: 8px;
+        max-width: 45%;
+        padding: 5px;
+    }
+    #coupon_purchase{
+        min-width: min-content;
+        flex: 50%;
+        margin-right: 15px;
+        margin-left: 8px;
+        max-width: 45%;
+        padding: 5px;
+    }
+    #purchase_coupons_text{
+        width: 50%;
+    }
+    #my_coupons_text{
+        width: 35%;
     }
 }
 @media screen and (max-width:605px){

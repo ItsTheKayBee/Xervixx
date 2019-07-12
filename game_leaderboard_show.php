@@ -10,7 +10,7 @@
                     <th>Name</th>
                     <th>Username</th>
                     <th>Score</th>
-                    <th>x-money won</th>
+                    <th>Fincoins won</th>
                 </tr>";
         while ($row=$lb_results->fetch_assoc()){
             $name=$row['name'];
