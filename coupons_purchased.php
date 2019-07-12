@@ -8,18 +8,18 @@ if($coupon_res->num_rows>0){
         $description=$row['description'];
         $code=$row['code'];
         echo '<div class="coupon">
-                    <div class="container" style="background-color:gainsboro">
-                        <h2><b>'.$title.'</b></h2>
+                    <div class="container" style="background-color:#b9f7c6">
+                        <h2 style="font-weight: bolder;"><b>'.$title.'</b></h2>
                         <p>'.$description.'</p>
                     </div>
                     <div class="container">
-                        <p>Promo Code: <span class="promo">'.$code.'</span></p>
-                        <button class="btns buy-btn">Purchased</button>
+                        <p style="font-weight: bolder;text-align: center;font-size: 18px;">PROMO CODE : <span id="promo">'.$code.'</span></p>
+                        <button id="buy-btn">PURCHASED</button>
                     </div>
                 </div>';
     }
 }else{
-    echo "You don't have any coupons! Use x-money balance to buy some from below.";
+    echo '<div id="no_coupon">You don\'t have any coupons! <i class="fa fa-frown"></i><br><br> Use x-money balance to buy some from below.</div>';
 }
 $con->close();
 

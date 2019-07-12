@@ -57,8 +57,7 @@ include 'db_connect.php';
                 <a class="btn" href="coupons.php" style="color:#16a085;"><i class="fa fa-ticket-alt"></i></a>
             </div>
             <div id="progressbar_container" style="left: 240px;top:120px;">
-                <span id="x_money_div" style="margin: 0 50px 0 0;">
-                    <i>x-MONEY :</i>
+                <span id="x_money_div" style="margin: 0 50px 0 0;" style="background-color: none;position: relative;top: -200px;">
                     <?php include 'x_money_credit.php';?> <i style="color:yellow" class="fas fa-coins"></i>
                 </span><br><br><br>
                 <?php include 'loan_updation.php';?>

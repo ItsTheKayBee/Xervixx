@@ -35,7 +35,7 @@ include 'db_connect.php';
             <input type="button" name="submit" onclick="feedBack()" value="SEND FEEDBACK">
             <footer>
                 <span style="float: left;"><i class="fa fa-phone" style="width:30px"></i> Phone: +91 1234567890</span><br>
-                <span style="float: left"><i class="fa fa-envelope" style="width:30px"> </i> Email: support@xervixx.com</span><br>
+                <span style="float: left"><i class="fa fa-envelope" style="width:30px" id="email_xervixx"> </i> Email: support@xervixx.com</span><br>
             </footer>
         </form>
         <button class="fas fa-caret-left" onclick="location.replace('home.php')">&nbsp;&nbsp;HOME</button>
@@ -52,7 +52,7 @@ include 'db_connect.php';
             {
                 title: 'Do you like the stock cricket game?',
             },
-            'Do you find paying loans easy and time saving',
+            'Do you find paying loans easy and time saving?',
             'Do you find your feed personalized and informative?'
         ]).then((result) => {
             if (result.value) {

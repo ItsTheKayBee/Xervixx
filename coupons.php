@@ -31,11 +31,9 @@ include 'db_connect.php';
         <a class="btn btn_stockcricket" href="stock_cricket.php" style="border-left: 10px solid #27ae60"><i class="fa fa-chart-line"></i>&nbsp; Stock Cricket</a>
         <a class="btn btn_quiz" href="quiz.php" style="border-left: 10px solid #8e44ad"><i class="fa fa-question-circle"></i>&nbsp; Quiz</a>
         <a class="btn btn_coupons active" href="coupons.php" style="border-left: 10px solid #16a085"><i class="fa fa-ticket-alt"></i>&nbsp; Coupons</a>
-        <div id="lower-menu">
-            <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
-            <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
-            <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
-        </div>
+        <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
+        <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
+        <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
     </div>
     <div id="lower-menu-dropdown">
         <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
@@ -56,11 +54,11 @@ include 'db_connect.php';
         <a class="btn" href="coupons.php" style="color:#16a085;"><i class="fa fa-ticket-alt"></i></a>
     </div>
     <div id="buy-container">
-        <h1 align="center">My Coupons</h1>
+        <p align="center" id="my_coupons_text">MY COUPONS</p>
         <div class="row" style="width:90%;">
             <?php include 'coupons_purchased.php';?>
         </div>
-        <h1 align="center">Purchase Coupons</h1>
+        <p align="center" id="purchase_coupons_text">PURCHASE COUPONS</p>
         <div class="row" style="width:90%;">
             <?php include 'all_coupons.php';?>
         </div>

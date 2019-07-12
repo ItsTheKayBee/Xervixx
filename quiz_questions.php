@@ -31,5 +31,4 @@
     }else{
         echo 'no quiz present';
     }
-
 ?>

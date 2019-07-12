@@ -626,6 +626,7 @@ span,div,p{
     right: 0;
     padding: 5px 10px;
     font-size: 28px;
+    cursor: pointer;
 }
 .profile-div span{
     margin: 0 10px 0 0;

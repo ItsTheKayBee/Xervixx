@@ -2,18 +2,20 @@ body{
     background-color: #ecf0f1;
 }
 .steps{
-    width: 78%;
+    width: 90%;
     height: 80%;
     background-color: #0e0e92;
     opacity: 0.9;
-    margin-bottom: 100px;
+    position: relative;
+    left: -35px;
+    top: -89px;
 }
 .steps_div{
     height: 100px;
     background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
     position: relative;
     width: 64%;
-    left: 380px;
+    left: 360px;
     margin-bottom: 20px;
     margin-top: -2px;
     border-radius: 80px;
@@ -446,6 +448,7 @@ p,span,h1,h2,h3,h4,h5,h6,dt,div{
     font-size: 30px;
     font-weight: bolder;
     color: #0e0e92;
+    margin-top: -20px;
 }
 hr{
     width: 90%;
@@ -563,17 +566,15 @@ hr{
 }
 #x_money_div{
     float: right;
-    right:230px;
-    top:-40px;
-    position: relative;
-    width: max-content;
-    background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);
+    right:500px;
+    top:0px;
+    position: fixed;
     color:yellow;
     text-shadow: 2px 1px #0e0e92;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 45px;
     padding: 9px;
-    border-radius: 10px;
+    z-index: 1;
 }
 .emi_tracker::-webkit-scrollbar{
     height: 5px;

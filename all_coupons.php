@@ -11,15 +11,15 @@ if($coupon_res->num_rows>0){
         $expiry=date_format($expiry,'d-m-Y');
         $price=$row['price'];
 
-        echo '<div class="coupon">
-                    <div class="container" style="background-color:gainsboro">
+        echo '<div id="coupon_purchase">
+                    <div class="container" style="background-color:#b4bbec">
                         <h2><b>'.$title.'</b></h2>
                         <p>'.$description.'</p>
                     </div>
                     <div class="container">
-                        <p>Use Promo Code: <span class="promo">'.$code.'</span></p>
-                        <span class="expire">Expires: '.$expiry.'</span>
-                        <button class="btns buy-btn">Buy Now<br>'.$price.'<span class="fa fa-btc" style="color: gold"></span></button>
+                        <p style="font-weight: bolder;font-size: 18px;">USE PROMO CODE : <span id="promo_code">'.$code.'</span></p>
+                        <span class="expire">EXPIRES ON : '.$expiry.'</span>
+                        <button id="purchase-btn">BUY NOW<br>'.$price.' <span class="fas fa-coins" style="color: gold"></span></button>
                     </div>
                 </div>';
     }

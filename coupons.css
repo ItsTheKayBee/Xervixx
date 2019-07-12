@@ -2,40 +2,126 @@
     box-sizing: border-box;
 }
 #buy-container{
-    margin: 60px 30px 5px 60px;
+    margin: 90px 30px 5px 60px;
 }
 body{
     overflow-x: hidden;
+    background-color: #ecf0f1;
 }
 .coupon{
     min-width: min-content;
     flex: 33%;
     max-width: 33.33%;
-    padding: 10px 0 0 10px;
+    margin: 10px 2px 10px 1px;
+    border: 3px solid #27ae60;
 }
 .container {
     padding: 2px 16px;
-    background-color: #f1f1f1;
+    background-color: #f8f8ff;;
 }
-.promo {
-    background: darkgrey;
-    padding: 3px;
+#promo {
+    background: #94c778;
+    padding: 3px 15px;
+}
+#promo_code{
+    background: #8178c7;
+    padding: 3px 15px;
 }
 .expire {
     color: red;
+    font-weight: bolder;
 }
-.buy-btn{
+#buy-btn{
     position: relative;
     right: -10px;
     margin-top: auto;
     margin-bottom: 10px;
     width: 100px;
+    color: white;
+    background-color: #2b8432;
+    border-radius: 8px;
+    border: none;
+    padding: 5px 10px;
+    left: 35%;
+    font-weight: bolder;
+    outline: none;
+}
+#buy-btn:hover{
+    cursor: pointer;
+}
+#purchase-btn{
+    position: relative;
+    right: -40px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 100px;
+    color: white;
+    background-color: #2b3684;
+    border-radius: 15px;
+    border: none;
+    padding: 6px 10px;
+    left: 9%;
+    outline: none;
+    font-weight: bolder;
+}
+#purchase-btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #2b3684;
+    border: 2px solid #2b3684;
 }
 .row{
     float: left;
     width: 70%;
     display: flex;
     flex-wrap: wrap;
+    padding: 18px;
+    position: relative;
+}
+#my_coupons_text{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #27ae60;
+    width: 25%;
+    position: relative;
+    left: 90px;
+    margin: auto;
+    padding: 8px;
+    color: white;
+    border: 2px solid whitesmoke;
+    box-shadow: 2px 4px 3px 0px rgb(0,0,0,0.4);
+}
+#coupon_purchase{
+    min-width: min-content;
+    flex: 33%;
+    max-width: 33.33%;
+    margin: 10px 2px 10px 1px;
+    border: 3px solid #2927b3;
+}
+#purchase_coupons_text{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #2927b3;
+    width: 30%;
+    position: relative;
+    left: 90px;
+    margin: 350px auto auto auto;
+    padding: 8px;
+    color: white;
+    border: 2px solid whitesmoke;
+    box-shadow: 2px 4px 3px 0px rgb(0,0,0,0.4);
+}
+#no_coupon{
+    border: 3px solid #27ae60;
+    width: 75%;
+    position: relative;
+    top: 70px;
+    left: 150px;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+    color: #27ae60;
+    font-weight: bolder;
 }
 @media screen and (max-width:890px){
     .coupon{
