@@ -35,6 +35,9 @@ body{
     transform: skewX(45deg);
     z-index: -1;
 }
+.credit{
+   margin-left: 380px;
+}
 .steps_div:after{
     position: absolute;
     content: '';
@@ -184,8 +187,8 @@ body{
 }
 .daily-task{
     position: relative;
-    top: -65px;
-    left: 10px;
+    top: -15px;
+    margin: 0 auto;
 }
 .daily-task-div{
     background-color: #ddd;
@@ -210,6 +213,22 @@ body{
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+}
+#x_money_div{
+    top:0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: fixed;
+    color:yellow;
+    text-shadow: 2px 1px #0e0e92;
+    font-weight: bolder;
+    font-size: 45px;
+    padding: 9px;
+    z-index: 11;
 }
 #x-money-div{
     height: 100px;
@@ -249,6 +268,13 @@ body::-webkit-scrollbar-track{
     border-radius:20px ;
     box-shadow: -1px -1px 5px 1px grey;
     background-image: linear-gradient(to bottom, rgba(0, 191, 255,0.5),rgba(64, 224, 208,0.5));
+}
+.row{
+    top:95px;
+}
+#credit .row{
+    float: right;
+    right: 20px;
 }
 .progressbar{
     counter-reset: step;
@@ -304,7 +330,6 @@ body::-webkit-scrollbar-track{
 }
 .progressbar li.active+li:after{
     background-color: #007300;
-
 }
 .progressbar li.default{
     color: red;

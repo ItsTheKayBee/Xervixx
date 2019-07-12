@@ -581,8 +581,12 @@ span,div,p{
     width: 55%;
     top: 10%;
     position: fixed;
-    left: 56%;
-    margin-left: -37.5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
     background-color: #059e74;
     border-radius: 5px;
     box-shadow: #818181 1px 1px 1px;

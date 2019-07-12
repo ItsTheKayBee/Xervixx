@@ -25,6 +25,14 @@ body {
     padding-bottom: auto;
     padding-top: auto;
 }
+.fa-trophy{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+}
+.fa-fire{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+}
 .daily-task{
     position: relative;
     top: 75px;
@@ -52,6 +60,7 @@ body {
 }
 .row{
     left:50%;
+    top:155px;
     position: absolute;
     transform: translateX(-50%);
 }
@@ -429,8 +438,8 @@ span,div,p{
     width: 55%;
     top: 10%;
     position: fixed;
-    left: 56%;
-    margin-left: -37.5%;
+    left:50%;
+    transform: translateX(-50%);
     background-color: #059e74;
     border-radius: 5px;
     box-shadow: #818181 1px 1px 1px;
@@ -510,11 +519,8 @@ span,div,p{
         top: 65px;
     }
     .leaderboard{
-        width: 98%;
-        height: 90%;
-        position: absolute;
-        top: 5px;
-        left: 286px;
+        width: 100%;
+        height: 95%;
     }
 }
 @media screen and (max-width: 630px){
@@ -557,19 +563,6 @@ span,div,p{
         top: 70%;
         left: 50%;
         transform: translateX(-50%);
-    }
-    .leaderboard{
-        height: 90%;
-        width: 98%;
-        position: absolute;
-        left: 225px;
-        top: 5px;
-    }
-    .leaderboard p{
-        font-size: 30px;
-    }
-    #leaderboard{
-        width: 98%;
     }
 }
 @media screen and (max-width: 270px) {
@@ -630,4 +623,10 @@ span,div,p{
     60% {
         transform: scaleX(1) scaleY(1);
     }
+}
+.leaderboard::-webkit-scrollbar{
+    width: 5px;
+}
+.leaderboard::-webkit-scrollbar-thumb{
+    background-color: black;
 }

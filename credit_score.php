@@ -24,7 +24,7 @@ if($row=$credit_res->fetch_assoc()) {
         } else if ($credit_score >= 750 && $credit_score <= 900) {
             $color = 'green';
         }
-        echo '<div class="row" style="width: 300px;">
+        echo '<div class="row credit" style="width: 300px;">
                   <div class="col-md-3 col-sm-6">
                       <div class="progress blue">
                           <span class="progress-right">

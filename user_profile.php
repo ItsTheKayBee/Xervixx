@@ -23,7 +23,6 @@ include 'db_connect.php';
 </div>
 <nav id="closeScoreLayout">
     <span class="fa fa-ellipsis-h" onclick="scoreLayout(this)" style="font-size:30px;color:white;padding:10px;line-height:25px;"></span>
-    <span class="fa fa-phone" id="contact" style="color: white;font-size:40px;padding:10px;"></span>
     <div id="x-money-div" style="font-size: 52px;">
         <?php include 'x_money_credit.php';?>
         <i style="color:gold" class="fas fa-coins"></i>

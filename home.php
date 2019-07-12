@@ -6,8 +6,8 @@ include 'db_connect.php';
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Home</title>
-    <link href="home-style.css" rel="stylesheet">
     <link href="feed-style.css" rel="stylesheet">
+    <link href="home-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
@@ -63,15 +63,15 @@ include 'db_connect.php';
                 <?php include 'loan_updation.php';?>
             </div>
             <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, turquoise 0%,steelblue 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">
-                <div class="container" style="margin-left: -170px;margin-top:60px;position: absolute">
+                <div class="container" style="margin-left: 140px;margin-top:-25px;position: absolute">
                     <?php include 'level.php';?>
                 </div>
-                <div class="daily-task" style="float:left; width: 55%;margin-left: 230px;margin-top:50px;">
+                <div class="daily-task" style="width: 55%;">
                     <dl class="daily-task-list">
                         <?php include 'tasks.php';?>
                     </dl>
                 </div>
-                <div class="container" style="margin-right: -100px;float: right;margin-top: -200px;">
+                <div class="container">
                     <?php include 'credit_score.php';?>
                 </div>
             </div>
