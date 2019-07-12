@@ -62,7 +62,7 @@ include 'db_connect.php';
                 </span><br><br><br>
                 <?php include 'loan_updation.php';?>
             </div>
-            <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, #ff7b0d 0%,#ffa84c 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">
+            <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, turquoise 0%,steelblue 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">
                 <div class="container" style="margin-left: -170px;margin-top:50px;position: absolute">
                     <?php include 'level.php';?>
                 </div>
@@ -75,7 +75,50 @@ include 'db_connect.php';
                     <?php include 'credit_score.php';?>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <span class="time_match_completed" style="transform:translateX(-50%);margin-bottom:10px;position: absolute;top:500px;left: 50%; ">YOU COULD ALSO CHECK </span><hr style="top:5px;position: relative">
+                <div class="column">
+                    <div class="cs_card">
+                        <h3> HEALTH INSURANCE</h3>
+                        <p></p>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="cs_card">
+                        <h3>TRAVEL INSURANCE</h3>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="cs_card">
+                        <h3>MOTOR INSURANCE</h3>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="cs_card">
+                        <h3>PERSONAL LOAN</h3>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div><div class="column">
+                    <div class="cs_card">
+                        <h3>BUSINESS LOAN</h3>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div><div class="column">
+                    <div class="cs_card">
+                        <h3>REAL ESTATE INVESTMENT</h3>
+                        <p>Some text</p>
+                        <p>Some text</p>
+                    </div>
+                </div>
+            </div>
     </body>
 <footer>
     <script src="homeScript.js"></script>

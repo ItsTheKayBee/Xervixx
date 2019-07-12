@@ -23,11 +23,11 @@ if($row=$level_res->fetch_assoc()){
         }else if($level_extra>=10 && $level_extra<30){
             $color='orange';
         }else if($level_extra>=30 && $level_extra<70){
-            $color='deepskyblue';
+            $color='#ffcc00';
         }else if($level_extra>=70 && $level_extra<90){
             $color='lime';
         }else if($level_extra>=90 && $level_extra<=100){
-            $color='green';
+            $color='#00e600';
         }
         echo '<div class="row" style="width: 300px;">
                   <div class="col-md-3 col-sm-6">

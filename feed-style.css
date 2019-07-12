@@ -46,7 +46,7 @@ h1 {
     display: block;
 }
 #tabLayout{
-    width: 220px;
+    width: 225px;
     position: fixed;
     top: 66px;
     left: 0;
@@ -202,10 +202,10 @@ h1 {
     display: none;
 }
 #openScoreLayout::-webkit-scrollbar-thumb{
-    background-color: default;
+    background-color: inherit;
 }
 #openScoreLayout::-webkit-scrollbar-track{
-    background-color: default;
+    background-color: inherit;
 }
 #openScoreLayout::-webkit-scrollbar{
     width:5px;
@@ -393,7 +393,7 @@ h1 {
     width: 100%;
     background-color: black;
     left: 0;
-    z-index: 1;
+    z-index: 11;
 }
 #x-money{
     color: gold;

@@ -14,7 +14,7 @@
 <body>
 <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"  title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="#loan" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOAN</a>
         <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large w3-hide-small">STOCK CRICKET</a>
@@ -26,36 +26,15 @@
     </div>
 </div>
 <div id="mobile-navbar" class=  "w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="#loan" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOAN</a>
-    <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">STOCK CRICKET</a>
-    <a href="#emi" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EMI</a>
-    <a href="#feed" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FEED</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-    <a href="login.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOG IN</a>
-    <a href="register.php" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">REGISTER</a>
+    <a href="#loan" class="w3-bar-item w3-button w3-padding-large" >LOAN</a>
+    <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large" >STOCK CRICKET</a>
+    <a href="#emi" class="w3-bar-item w3-button w3-padding-large" >EMI</a>
+    <a href="#feed" class="w3-bar-item w3-button w3-padding-large" >FEED</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" >CONTACT</a>
+    <a href="login.php" class="w3-bar-item w3-button w3-padding-large" >LOG IN</a>
+    <a href="register.php" class="w3-bar-item w3-button w3-padding-large" >REGISTER</a>
 </div>
 <div class="w3-content w3-black" style="max-width:2000px;margin-top:46px">
-    <div class="mySlides w3-display-container w3-center">
-        <img src="" style="width:100%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-            <h3>Do you want to pursue higher education but cannot since you are short of money?</h3>
-            <p><b>Personal Loans upto Rs 15 Lakhs</b></p>
-        </div>
-    </div>
-    <div class="mySlides w3-display-container w3-center">
-        <img src="" style="width:100%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-            <h3>DO you want to grow your business?</h3>
-            <p><b>Business Loans upto Rs 15 Lakhs</b></p>
-        </div>
-    </div>
-    <div class="mySlides w3-display-container w3-center">
-        <img src="" style="width:100%">
-        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-            <h3>Do you want to travel the world with your family?</h3>
-            <p><b>Travel Loans upto Rs 15 Lakhs</b></p>
-        </div>
-    </div>
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
         <img class="w3-center" alt="xervixx-logo" src='xervixx-logo.png' style="z-index:30;width: 400px;height: 120px">
         <p class="w3-opacity"><i>WE LOVE TO SEE YOUR DREAMS COME TRUE</i></p>
@@ -201,27 +180,6 @@
 </footer>
 
 <script>
-    var myIndex = 0;
-    carousel();
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}
-        x[myIndex-1].style.display = "block";
-        setTimeout(carousel, 4000);
-    }
-    function myFunction() {
-        var x = document.getElementById("mobile-navbar");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
     var modal = document.getElementById('ticketModal');
     window.onclick = function(event) {
         if (event.target == modal) {

@@ -7,9 +7,9 @@
         echo '<div class="steps">
                     <p id="tag_emi"><i>WANT TO INCREASE YOUR CREDIT SCORE ?</i></p>
                     <div id="steps_container">
-                        <div class="steps_div"><p class="steps_content">1. PAY YOUR EMI BEFORE 7 DAYS</p></div>
-                        <div class="steps_div"><p class="steps_content">2. INCREASE YOUR CREDIT SCORE & GET x-MONEY</p></div>
-                        <div class="steps_div"><p class="steps_content">3. USE x-MONEY TO AVAIL EXCITING DISCOUNTS</p></div>
+                        <div class="steps_div"><p class="steps_content">1. PAY YOUR EMIs BEFORE THE DUE DATE</p></div>
+                        <div class="steps_div"><p class="steps_content">2. EARN STARS AND INCREASE YOUR CREDIT SCORE</p></div>
+                        <div class="steps_div"><p class="steps_content">3. GET EXCITING CASHBACK OFFERS AND DISCOUNTS</p></div>
                     </div>
                     <p id="emi_pay"><a href="#emi_progress" style="text-decoration: none;"><i>PAY NOW</i></a></p>
                 </div>

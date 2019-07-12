@@ -20,30 +20,30 @@ include 'db_connect.php';
     <a href="user_profile.php"><?php include "display_pic.php";?></a>
 </div>
 <div id="tabLayout">
-    <a class="btn btn_home" href="home.php" style="border-left: 10px solid #d35400"><i class="fa fa-home"></i>&nbsp;Home</a>
-    <a class="btn btn_feed active feed-feed" onclick="filterSelection('all');feedUpDown()" style="border-left: 10px solid #2980b9"><i class="fa fa-mobile"></i>&nbsp;&nbsp;Feed &nbsp;<span class="fa fa-caret-down flip"></span></a>
+    <a class="btn btn_home" href="home.php" style="border-left: 10px solid #d35400"><i class="fa fa-home"></i>&nbsp;HOME</a>
+    <a class="btn btn_feed active feed-feed" onclick="filterSelection('all');feedUpDown()" style="border-left: 10px solid #2980b9"><i class="fa fa-mobile"></i>&nbsp;&nbsp;FEED &nbsp;<span class="fa fa-caret-down flip"></span></a>
     <div id="feed-container">
-        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('protecting')"> Protecting</a>
-        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('investing')"> Investing</a>
-        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('financing')"> Financing</a>
-        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('advising')"> Advising</a>
+            <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('protecting')"> PROTECTING</a>
+        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('investing')"> INVESTING</a>
+        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('financing')"> FINANCING</a>
+        <a class="btn feed-sub btn_feed_sub" onclick="filterSelection('advising')"> ADVISING</a>
     </div>
-    <a class="btn btn_stockcricket" href="stock_cricket.php" style="border-left: 10px solid #27ae60"><i class="fa fa-chart-line"></i>&nbsp; Stock Cricket</a>
-    <a class="btn btn_quiz" href="quiz.php" style="border-left: 10px solid #8e44ad"><i class="fa fa-question-circle"></i>&nbsp; Quiz</a>
-    <a class="btn btn_coupons" href="coupons.php" style="border-left: 10px solid #16a085"><i class="fa fa-ticket-alt"></i>&nbsp; Coupons</a>
-    <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
-    <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
-    <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
+    <a class="btn btn_stockcricket" href="stock_cricket.php" style="border-left: 10px solid #27ae60"><i class="fa fa-chart-line"></i>&nbsp; STOCK CRICKET</a>
+    <a class="btn btn_quiz" href="quiz.php" style="border-left: 10px solid #8e44ad"><i class="fa fa-question-circle"></i>&nbsp; QUIZ</a>
+    <a class="btn btn_coupons" href="coupons.php" style="border-left: 10px solid #16a085"><i class="fa fa-ticket-alt"></i>&nbsp; COUPONS</a>
+    <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;SHARE & EARN</a>
+    <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;CONTACT &nbsp;</a>
+    <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;LOGOUT&nbsp;</a>
     <div id="lower-menu-dropdown">
-        <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;Share & Earn</a>
-        <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;Contact &nbsp;</a>
-        <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Logout&nbsp;</a>
+        <a class="btn btn_share" onclick="referral()" style="border-left: 10px solid #f39c12"><i class="fa fa-share-alt"></i>&nbsp;&nbsp;SHARE & EARN</a>
+        <a class="btn btn_contact" href="contact_us.php" style="border-left: 10px solid #2980b9"><i class="fa fa-phone"></i>&nbsp;&nbsp;CONTACT &nbsp;</a>
+        <a class="btn btn_logout" onclick="logout()" style="border-left: 10px solid #c0392b"><i class="fa fa-power-off"></i>&nbsp;&nbsp;LOGOUT&nbsp;</a>
     </div>
     <div id="feed-container-icon">
-        <a class="btn feed-sub" onclick="filterSelection('protecting')"> Protecting</a>
-        <a class="btn feed-sub" onclick="filterSelection('investing')"> Investing</a>
-        <a class="btn feed-sub" onclick="filterSelection('financing')"> Financing</a>
-        <a class="btn feed-sub" onclick="filterSelection('advising')"> Advising</a>
+        <a class="btn feed-sub" onclick="filterSelection('protecting')"> PROTECTING</a>
+        <a class="btn feed-sub" onclick="filterSelection('investing')"> INVESTING</a>
+        <a class="btn feed-sub" onclick="filterSelection('financing')"> FINANCING</a>
+        <a class="btn feed-sub" onclick="filterSelection('advising')"> ADVISING</a>
     </div>
     <div id="tabLayout-icons">
         <a class="btn" href="home.php" style="color:#d35400; "><i class="fa fa-home"></i></a>
@@ -54,7 +54,7 @@ include 'db_connect.php';
     </div>
 </div>
     <nav id="closeScoreLayout">
-        <span class="fa fa-ellipsis-h" onclick="scoreLayout(this)" style="font-size:30px;color:white;padding:10px;line-height:25px;"></span>
+        <span class="fa fa-ellipsis-h " onclick="scoreLayout(this)" style="font-size:30px;color:white;padding:10px;line-height:25px;"></span>
         <span class="fa fa-phone" id="contact" style="color: white;font-size:40px;padding:10px;"></span>
         <div id="x-money-div" style="font-size: 52px;">
             <?php include 'x_money_credit.php';?>
