@@ -35,7 +35,7 @@ class Nse_api:
 		  host="localhost",
 		  user="root",
 		  password="",
-		  database="xervixx_test"
+		  database="xervixx"
 		)
 
 		mycursor = mydb.cursor()
@@ -56,7 +56,7 @@ class Nse_api:
 		  host="localhost",
 		  user="root",
 		  password="",
-		  database="xervixx_test"
+		  database="xervixx"
 		)
 
 		mycursor = mydb.cursor()

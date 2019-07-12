@@ -17,8 +17,8 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="#loan" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOAN</a>
         <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large w3-hide-small">STOCK CRICKET</a>
-        <a href="#emi" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EMI</a>
         <a href="#feed" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FEED</a>
+        <a href="#emi" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EMI</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
         <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOG IN</a>
         <a href="register.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">REGISTER</a>
@@ -27,8 +27,8 @@
 <div id="mobile-navbar" class=  "w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
     <a href="#loan" class="w3-bar-item w3-button w3-padding-large" >LOAN</a>
     <a href="#stock_cricket" class="w3-bar-item w3-button w3-padding-large" >STOCK CRICKET</a>
-    <a href="#emi" class="w3-bar-item w3-button w3-padding-large" >EMI</a>
     <a href="#feed" class="w3-bar-item w3-button w3-padding-large" >FEED</a>
+    <a href="#emi" class="w3-bar-item w3-button w3-padding-large" >EMI</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large" >CONTACT</a>
     <a href="login.php" class="w3-bar-item w3-button w3-padding-large" >LOG IN</a>
     <a href="register.php" class="w3-bar-item w3-button w3-padding-large" >REGISTER</a>

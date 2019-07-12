@@ -5,7 +5,7 @@ include 'db_connect.php';
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Xervixx Home</title>
+    <title>Home</title>
     <link href="home-style.css" rel="stylesheet">
     <link href="feed-style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,21 +57,21 @@ include 'db_connect.php';
                 <a class="btn" href="coupons.php" style="color:#16a085;"><i class="fa fa-ticket-alt"></i></a>
             </div>
             <div id="progressbar_container" style="left: 240px;top:120px;">
-                <span id="x_money_div" style="margin: 0 50px 0 0;" style="background-color: none;position: relative;top: -200px;">
+                <span id="x_money_div" style="margin: 0 50px 0 0;" style="background: none;position: relative;top: -200px;">
                     <?php include 'x_money_credit.php';?> <i style="color:yellow" class="fas fa-coins"></i>
                 </span><br><br><br>
                 <?php include 'loan_updation.php';?>
             </div>
             <div id="container-div" style="position: relative;left: 240px;top: 120px;width:80%; height:230px;margin-bottom: 30px;background-image: linear-gradient(to bottom, turquoise 0%,steelblue 100%);;box-shadow: -1px -1px 5px 1px grey;border-radius:20px;">
-                <div class="container" style="margin-left: -170px;margin-top:50px;position: absolute">
+                <div class="container" style="margin-left: -170px;margin-top:60px;position: absolute">
                     <?php include 'level.php';?>
                 </div>
-                <div class="daily-task" style="float:left; width: 55%;margin-left: 250px;margin-top:60px;">
+                <div class="daily-task" style="float:left; width: 55%;margin-left: 230px;margin-top:50px;">
                     <dl class="daily-task-list">
                         <?php include 'tasks.php';?>
                     </dl>
                 </div>
-                <div class="container" style="margin-right: -60px;float: right;margin-top: -200px;">
+                <div class="container" style="margin-right: -100px;float: right;margin-top: -200px;">
                     <?php include 'credit_score.php';?>
                 </div>
             </div>

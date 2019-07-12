@@ -56,6 +56,9 @@ if (session_status() == PHP_SESSION_NONE) {
 </footer>
 </html>
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -64,9 +67,6 @@ if (session_status() == PHP_SESSION_NONE) {
     if ($con->connect_error)
     {
         die('No connection: ' . $con->connect_error);
-    }
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
     }
     if(isset($_POST['submit'])) {
         $phone = $_POST['phone'];
